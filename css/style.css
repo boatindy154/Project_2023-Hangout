@@ -12996,3 +12996,24 @@ textarea.form-control {
 .w_tp_song_name{
   float: left;
 }
+
+.boxmusic{
+  float: left;
+  padding-left: 24px;
+  padding-top: 30px;
+}
+
+.table{
+  /* Rectangle 8 */
+
+/* position: absolute;
+width: 1306px;
+height: 757px; */
+left: 67px;
+top: 186px;
+
+background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(24, 13, 1, 0.8) 100%);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+
+}
