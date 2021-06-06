@@ -17,6 +17,7 @@
     
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/regis.css">
   </head>
   <body>
 
@@ -89,48 +90,56 @@
     <section class="ftco-section testimony-section img" style="background-image: url(images/bg_4.jpg);" >
     	<div class="overlay"></div>
       <div class="container" style="padding-top: 6%;">
-		<div class="center mx-auto" >
-            <h1>Login</h1>
-            <form method="post">
-              <div class="txt_field">
-                <input type="text" required>
-                <span></span>
-                <label>Username</label>
+        <div class="title">Registration</div>
+        <div class="content" style="position: sticky;">
+          <form action="#">
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">Full Name</span>
+                <input type="text" placeholder="Enter your name" required>
               </div>
-              <div class="txt_field">
-                <input type="password" required>
-                <span></span>
-                <label>Password</label>
+              <div class="input-box">
+                <span class="details">Username</span>
+                <input type="text" placeholder="Enter your username" required>
               </div>
-              <div class="pass">Forgot Password?</div>
-              <input type="submit" value="Login">
-              <div class="signup_link">
-                Not a member? <a href="Register.html">Signup</a>
+              <div class="input-box">
+                <span class="details">Email</span>
+                <input type="text" placeholder="Enter your email" required>
               </div>
-            </form>
-          </div>
-        <!-- <div class="row justify-content-center mb-5">
-          <div class="col-md-7 text-center heading-section heading-section-white ">
-          	<span class="subheading"></span>
-            <h2 class="mb-3 fontre">LOGIN</h2>
-          </div>
+              <div class="input-box">
+                <span class="details">Phone Number</span>
+                <input type="text" placeholder="Enter your number" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Password</span>
+                <input type="text" placeholder="Enter your password" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Confirm Password</span>
+                <input type="text" placeholder="Confirm your password" required>
+              </div>
+            </div>
+            <div class="gender-details">
+              <input type="radio" name="gender" id="dot-1">
+              <input type="radio" name="gender" id="dot-2">
+              <input type="radio" name="gender" id="dot-3">
+              <span class="gender-title">Gender</span>
+              <div class="category">
+                <label for="dot-1">
+                <span class="dot one"></span>
+                <span class="gender">Male</span>
+              </label>
+              <label for="dot-2">
+                <span class="dot two"></span>
+                <span class="gender">Female</span>
+              </label>
+              </div>
+            </div>
+            <div class="button">
+              <input type="submit" value="Register">
+            </div>
+          </form>
         </div>
-        <div class="container text-center" style="position:sticky ;">
-            <div class="form-group" style="text-align: -webkit-center;">
-                <label class="fontlogin" for="exampleDropdownFormEmail2">Email</label>
-                <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
-              </div>
-              <div class="form-group" style="text-align: -webkit-center;">
-                <label class="fontlogin" for="exampleDropdownFormPassword2">Password</label>
-                <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
-              </div>
-              <div class="form-group">
-                <div class="form-check">
-                  <p>Forgot password?</p>
-                </div>
-              </div>
-              <button style="width: 25%;" type="submit" class="btn btn-primary">Sign in</button>
-        </div> -->
       </div>
     </section>
 
