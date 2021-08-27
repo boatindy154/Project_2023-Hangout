@@ -1,3 +1,45 @@
+<?php 
+
+    session_start();
+
+    require_once "connection.php";
+
+    if (isset($_POST['submit'])) {
+
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $phone = $_POST['phone'];
+
+        $user_check = "SELECT * FROM user WHERE username = '$username' LIMIT 1";
+        $result = mysqli_query($conn, $user_check);
+        $user = mysqli_fetch_assoc($result);
+
+        if ($user['username'] === $username) {
+            echo "<script>alert('Username already exists');</script>";
+        } else {
+            $passwordenc = md5($password);
+
+            $query = "INSERT INTO user (username, password, firstname, lastname, phone ,userlevel)
+                        VALUE ('$username', '$passwordenc', '$firstname', '$lastname', '$phone', 'm')";
+            $result = mysqli_query($conn, $query);
+
+            if ($result) {
+                $_SESSION['success'] = "Insert user successfully";
+                header("Location: login.php");
+            } else {
+                $_SESSION['error'] = "Something went wrong";
+                header("Location: register.php");
+            }
+        }
+
+    }
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -87,31 +129,31 @@
           <form action="#">
             <div class="user-details">
               <div class="input-box">
-                <span class="details">Full Name</span>
-                <input type="text" placeholder="Enter your name" required>
+                <span class="details">Firstname</span>
+                <input type="text" name="firstname" placeholder="Enter your name" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Lastname</span>
+                <input type="text" name="lastname" placeholder="Enter your username" required>
               </div>
               <div class="input-box">
                 <span class="details">Username</span>
-                <input type="text" placeholder="Enter your username" required>
+                <input type="text" name="username" placeholder="Enter your email" required>
               </div>
               <div class="input-box">
                 <span class="details">Email</span>
-                <input type="text" placeholder="Enter your email" required>
+                <input type="text" name="email" placeholder="Enter your number" required>
               </div>
               <div class="input-box">
                 <span class="details">Phone Number</span>
-                <input type="text" placeholder="Enter your number" required>
+                <input type="text" name="phone" placeholder="Enter your password" required>
               </div>
               <div class="input-box">
                 <span class="details">Password</span>
-                <input type="text" placeholder="Enter your password" required>
-              </div>
-              <div class="input-box">
-                <span class="details">Confirm Password</span>
-                <input type="text" placeholder="Confirm your password" required>
+                <input type="text" name="password" placeholder="Confirm your password" required>
               </div>
             </div>
-            <div class="gender-details">
+            <!-- <div class="gender-details">
               <input type="radio" name="gender" id="dot-1">
               <input type="radio" name="gender" id="dot-2">
               <input type="radio" name="gender" id="dot-3">
@@ -126,9 +168,9 @@
                 <span class="gender">Female</span>
               </label>
               </div>
-            </div>
+            </div> -->
             <div class="button">
-              <input type="submit" value="Register">
+              <input type="submit" name="submit" value="Submit">
             </div>
           </form>
         </div>
