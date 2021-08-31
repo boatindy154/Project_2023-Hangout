@@ -1,6 +1,10 @@
 <?php
      session_start();
-
+        //check login
+        if($_SESSION['full_name'] == '')
+        {
+            header("Location: login.php");
+        }
     // echo '<pre>' ;
     // print_r($_SESSION);
     // echo '</pre>';
@@ -80,9 +84,9 @@
                     $total=0;
                     if(!empty($_SESSION['cart']))
                     {
-                        foreach($_SESSION['cart'] as $id=>$qty)
+                        foreach($_SESSION['cart'] as $p_id=>$qty)
                         {
-                            $sql = "SELECT * FROM tbl_food WHERE id=$id";
+                            $sql = "SELECT * FROM tbl_food WHERE p_id=$p_id";
                             $query = mysqli_query($conn, $sql);
                             $row = mysqli_fetch_array($query);
                             $sum = $row['price'] * $qty;

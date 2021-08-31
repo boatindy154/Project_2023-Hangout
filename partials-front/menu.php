@@ -39,7 +39,7 @@ include ('config/constants.php');
                         <a href="foods.php">Foods</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="order_detail.php">Order</a>
                     </li>
                     <li>
                         <a href="logout.php">Logout</a>

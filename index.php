@@ -4,7 +4,7 @@
     //   print_r($_SESSION);
     //   echo '</pre>';
      include('config/constantss.php'); 
-     $id = $_SESSION['id'];
+     $m_id = $_SESSION['id'];
      $full_name = $_SESSION['full_name'];
      $userlevel = $_SESSION['userlevel'];
      
@@ -157,7 +157,7 @@
                                 <?php echo $row['description']; ?>
                             </p>
                             <br>
-                            <a href="cart.php?id=<?php echo $row['id']; ?>&act=add" class="btn btn-primary">Order Now</a>
+                            <a href="cart.php?id=<?php echo $row['p_id']; ?>&act=add" class="btn btn-primary">Order Now</a>
                         </div>
                     </div>
 

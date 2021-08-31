@@ -1,5 +1,10 @@
 <?php
 session_start();
+    //check login
+    if($_SESSION['full_name'] == '')
+    {
+        header("Location: login.php");
+    }
 // echo '<pre>';
 // print_r($_SESSION);
 // echo '</pre>';
@@ -53,7 +58,7 @@ $rowmember = mysqli_fetch_array($rsmember);
             $total = 0;
             if (!empty($_SESSION['cart'])) {
               foreach ($_SESSION['cart'] as $id => $qty) {
-                $sql = "SELECT * FROM tbl_food WHERE id=$id";
+                $sql = "SELECT * FROM tbl_food WHERE p_id=$id";
                 $query = mysqli_query($conn, $sql);
                 $row = mysqli_fetch_array($query);
                 $sum = $row['price'] * $qty;
@@ -76,35 +81,27 @@ $rowmember = mysqli_fetch_array($rsmember);
               echo "</tr>";
             }
             ?>
-            <tr>
-
-              <td colspan="6" align="right">
-                <input type="hidden" name="m_id" value="<?php echo $m_id; ?>">
-                <input type="hidden" name="total" value="<?php echo $total; ?>">
-                <input type="submit" class="btn btn-primary" value="ยืนยันการสั่ง">
-              </td>
-            </tr>
           </table>
           <h3>รายละเอียด</h3>
           
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">ชื่อ - นามสกุล</label>
-                <input type="email" class="form-control" id="inputEmail4"
+                <input type="text" class="form-control" 
                  name="full_name" value="<?php echo $rowmember['full_name'];?>">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" name="email"
+                <input type="text" class="form-control" id="inputEmail4" name="email"
                 name="full_name" value="<?php echo $rowmember['email'];?>">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">เบอร์โทร</label>
-                <input type="email" class="form-control" id="inputEmail4" name="phone"
+                <input type="text" class="form-control" id="inputEmail4" name="phone"
                 name="full_name" value="<?php echo $rowmember['phone'];?>">
               </div>
             </div>
