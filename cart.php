@@ -120,7 +120,7 @@
 
                                 <input type="submit" class="btn btn-warning" name="button" id="button" value="ปรับปรุง" />
                                 <input type="button" class="btn btn-success" name="Submit2" value="สั่ง" onclick="window.
-                                location='order.php';"/>
+                                location='confirm.php';"/>
                             </td>
                         </tr>
                     <?php }else{

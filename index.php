@@ -1,8 +1,8 @@
     <?php include('partials-front/menu.php'); 
      session_start();
-    //  echo '<pre>';
-    //  print_r($_SESSION);
-    //  echo '</pre>';
+    //   echo '<pre>';
+    //   print_r($_SESSION);
+    //   echo '</pre>';
      include('config/constantss.php'); 
      $id = $_SESSION['id'];
      $full_name = $_SESSION['full_name'];
