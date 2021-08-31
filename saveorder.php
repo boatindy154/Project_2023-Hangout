@@ -97,5 +97,5 @@
 ?>
 <script type="text/javascript">
     alert("<?php echo $msg;?>");
-    window.location = 'index.php';
+    window.location = 'order_detail.php?o_id=<?php echo $o_id; ?>';
 </script>

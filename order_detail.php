@@ -1,6 +1,20 @@
 <?php include('partials-front/menu.php'); 
 session_start();
 include 'config/constantss.php';
+
+$o_id = $_GET['o_id'];
+
+$querycartdetail = "SELECT d.*, p.image_name, p.title, p.price, h.*
+FROM order_detail as d 
+INNER JOIN order_head as h ON d.o_id = h.o_id
+INNER JOIN tbl_food as p ON d.p_id = p.p_id
+WHERE d.o_id=$o_id
+AND h.m_id=$m_id";
+$result = mysqli_query($conn, $querycartdetail);
+$rowdetail = mysqli_fetch_array($result);
+// echo '<pre>';
+//     print_r($rowdetail);
+// echo '</pre>';
 ?>
   <!-- Link our CSS file -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -11,6 +25,10 @@ include 'config/constantss.php';
     <div class="row">
         <div class="col-12 col-sm-12 col-md-12">
             <h3>Order</h3>
+            <h4>
+                OrderID : <?php echo $rowdetail['o_id']; ?><br>
+                วัน/เวลา : <?php echo $rowdetail['dttm']; ?><br>
+            </h4>
             <table class="table table-bordered table-hover table-striped">
                 <tr>
                     <th width="5%" bgcolor="#EAEAEA">#</td>
@@ -23,12 +41,7 @@ include 'config/constantss.php';
 
 
                 <?php
-                        $querycartdetail = "SELECT d.*, p.image_name, p.title, p.price
-                        FROM order_detail as d 
-                        INNER JOIN tbl_food as p ON d.p_id = p.p_id
-                        WHERE d.o_id=1";
-                        $result = mysqli_query($conn, $querycartdetail);
-                        $rowdetail = mysqli_fetch_array($result);
+                       
 
                 $total = 0;
                     foreach($result as $row){
