@@ -33,20 +33,18 @@
 
 
     <!-- fOOD sEARCH Section Starts Here -->
-    <section class="food-search text-center">
-        <div class="container">
+    <section class="food-search text-center ">
+        <div class="container" style="padding: 6% 0;">
             
             <h2>Foods on <a href="#" class="text-white">"<?php echo $category_title; ?>"</a></h2>
 
         </div>
-    </section>
     <!-- fOOD sEARCH Section Ends Here -->
 
 
 
     <!-- fOOD MEnu Section Starts Here -->
-    <section class="food-menu">
-        <div class="container">
+        <div class="container food-menu ">
             <h2 class="text-center">Food Menu</h2>
 
             <?php 

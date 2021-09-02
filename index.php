@@ -14,16 +14,15 @@
     ?>
 
     <!-- fOOD sEARCH Section Starts Here -->
-    <section class="food-search text-center">
-        <div class="container">
-            
-            <form action="<?php echo SITEURL; ?>food-search.php" method="POST">
+    <section class="food-search text-center  ">
+        <div class="container" style="padding: 6% 0;">
+            <form action="food-search.php" method="POST">
                 <input type="search" name="search" placeholder="Search for Food.." required>
                 <input type="submit" name="submit" value="Search" class="btn btn-primary">
             </form>
 
         </div>
-    </section>
+    
     <!-- fOOD sEARCH Section Ends Here -->
 
     <?php 
@@ -35,9 +34,9 @@
     ?>
 
     <!-- CAtegories Section Starts Here -->
-    <section class="categories">
-        <div class="container">
-            <h2 class="text-center">Explore Foods</h2>
+    
+        <div class="container categories ">
+            <span style="color: black;"><h2 class="text-center">Explore Foods</h2></span>
 
             <?php 
                 //Create SQL Query to Display CAtegories from Database
@@ -94,21 +93,21 @@
 
             <div class="clearfix"></div>
         </div>
-    </section>
+    
     <!-- Categories Section Ends Here -->
 
 
 
     <!-- fOOD MEnu Section Starts Here -->
-    <section class="food-menu">
-        <div class="container">
+        
+        <div class="food-menu container">
             <h2 class="text-center">Food Menu</h2>
 
             <?php 
             
             //Getting Foods from Database that are active and featured
             //SQL Query
-            $sql2 = "SELECT * FROM tbl_food WHERE active='Yes' AND featured='Yes' LIMIT 6";
+            $sql2 = "SELECT * FROM tbl_food WHERE active='Yes' AND featured='Yes' LIMIT 3";
 
             //Execute the Query
             $res2 = mysqli_query($conn, $sql2);

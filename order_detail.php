@@ -24,7 +24,8 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
 
 <link rel="stylesheet" href="css/style.css">
 <!-- *********************************************************** -->
-<div class="container ">
+<body class="food-search">
+<div class="container" style="padding: 6% 0;">
     <div class="row">
         <div class="col-12 col-sm-12 col-md-12">
             <h3>Order</h3>
@@ -34,12 +35,12 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
             </h4>
             <table class="table table-bordered table-hover table-striped">
                 <tr>
-                    <th width="5%" bgcolor="#EAEAEA">#</td>
-                    <th width="10%" bgcolor="#EAEAEA">img</td>
-                    <th width="55%" bgcolor="#EAEAEA">สินค้า</td>
-                    <th width="10%" align="center" bgcolor="#EAEAEA">ราคา</td>
-                    <th width="10%" align="center" bgcolor="#EAEAEA">จำนวน</td>
-                    <th width="5%" align="center" bgcolor="#EAEAEA">รวม</td>
+                    <th width="5%" bgcolor="">#</td>
+                    <th width="10%" bgcolor="">img</td>
+                    <th width="55%" bgcolor="">สินค้า</td>
+                    <th width="10%" align="center" bgcolor="">ราคา</td>
+                    <th width="10%" align="center" bgcolor="">จำนวน</td>
+                    <th width="5%" align="center" bgcolor="">รวม</td>
                 </tr>
 
 
@@ -60,9 +61,9 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
                 } //closeforeach
 
                 echo "<tr>";
-                echo "<td colspan='4' bgcolor='#CEE7FF' align='center'><b>ราคารวม</b></td>";
-                echo "<td align='right' bgcolor='#CEE7FF'>" . "<b>" . number_format($total, 2) . "</b>" . "</td>";
-                echo "<td align='left' bgcolor='#CEE7FF'></td>";
+                echo "<td colspan='4' bgcolor='' align='center'><b>ราคารวม</b></td>";
+                echo "<td align='right' bgcolor=''>" . "<b>" . number_format($total, 2) . "</b>" . "</td>";
+                echo "<td align='left' bgcolor=''></td>";
                 echo "</tr>";
 
                 ?>
@@ -70,3 +71,4 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
         </div>
     </div>
 </div>
+</body>

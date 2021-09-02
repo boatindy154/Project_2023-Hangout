@@ -4,8 +4,8 @@
 
 
     <!-- CAtegories Section Starts Here -->
-    <section class="categories">
-        <div class="container">
+    <section class="categories food-search">
+        <div class="container " style="padding: 6% 0;">
             <h2 class="text-center">Explore Foods</h2>
 
             <?php 

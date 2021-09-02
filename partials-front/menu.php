@@ -11,12 +11,13 @@ include ('config/constants.php');
     <title>Restaurant Website</title>
 
     <!-- Link our CSS file -->
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <!-- Navbar Section Starts Here -->
-    <section class="">
+    <section class="backgroundcolor navv" >
         <div class="container">
             <div class="logo">
                 <a href="index.php" title="Logo">
@@ -30,7 +31,7 @@ include ('config/constants.php');
                         <a href="index.php">Home</a>
                     </li>
                     <li>
-                        <a href="<?php echo SITEURL; ?>">Music</a>
+                        <a href="music.php">Music</a>
                     </li>
                     <li>
                         <a href="categories.php">Categories</a>
@@ -54,3 +55,4 @@ include ('config/constants.php');
         </div>
     </section>
     <!-- Navbar Section Ends Here -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
