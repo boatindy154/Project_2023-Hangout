@@ -1,5 +1,10 @@
     
-    <?php include('partials-front/menu.php'); ?>
+    <?php
+    session_start();
+     include('partials-front/menu.php');
+     $m_id = $_SESSION['id'];
+     $full_name = $_SESSION['full_name'];
+     $userlevel = $_SESSION['userlevel']; ?>
 
     <?php 
         //CHeck whether id is passed or not
@@ -61,17 +66,17 @@
                     //Food is Available
                     while($row2=mysqli_fetch_assoc($res2))
                     {
-                        $id = $row2['id'];
-                        $title = $row2['title'];
-                        $price = $row2['price'];
-                        $description = $row2['description'];
-                        $image_name = $row2['image_name'];
+                        // $p_id = $row2['p_id'];
+                        // $title = $row2['title'];
+                        // $price = $row2['price'];
+                        // $description = $row2['description'];
+                        // $image_name = $row2['image_name'];
                         ?>
                         
                         <div class="food-menu-box">
                             <div class="food-menu-img">
                                 <?php 
-                                    if($image_name=="")
+                                    if($row2['image_name']=="")
                                     {
                                         //Image not Available
                                         echo "<div class='error'>Image not Available.</div>";
@@ -80,7 +85,7 @@
                                     {
                                         //Image Available
                                         ?>
-                                        <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                                        <img src="images/food/<?php echo $row2['image_name']; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
                                         <?php
                                     }
                                 ?>
@@ -88,14 +93,14 @@
                             </div>
 
                             <div class="food-menu-desc">
-                                <h4><?php echo $title; ?></h4>
-                                <p class="food-price">$<?php echo $price; ?></p>
+                                <h4><?php echo $row2['title']; ?></h4>
+                                <p class="food-price">$<?php echo $row2['price']; ?></p>
                                 <p class="food-detail">
-                                    <?php echo $description; ?>
+                                    <?php echo $row2['description']; ?>
                                 </p>
                                 <br>
 
-                                <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
+                                <a href="cart.php?id=<?php echo $row2['p_id']; ?>&act=add" class="btn btn-primary">Order Now</a>
                             </div>
                         </div>
 

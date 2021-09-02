@@ -1,5 +1,6 @@
-
-    <?php include('partials-front/menu.php'); ?>
+    <?php
+    session_start();
+    include('partials-front/menu.php'); ?>
 
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center">
@@ -38,7 +39,7 @@
                     while($row=mysqli_fetch_assoc($res))
                     {
                         //Get the Values
-                        $id = $row['id'];
+                        $p_id = $row['p_id'];
                         $title = $row['title'];
                         $description = $row['description'];
                         $price = $row['price'];

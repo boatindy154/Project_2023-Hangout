@@ -42,6 +42,9 @@ include ('config/constants.php');
                         <a href="order_detail.php">Order</a>
                     </li>
                     <li>
+                        <a href="paymenttest.php">Payment</a>
+                    </li>
+                    <li>
                         <a href="logout.php">Logout</a>
                     </li>
                 </ul>
