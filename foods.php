@@ -3,7 +3,7 @@
     include('partials-front/menu.php'); ?>
 
     <!-- fOOD sEARCH Section Starts Here -->
-    <section class="food-search text-center">
+    <section class="food-search text-center bg">
         <div class="container" style="padding: 6% 0;">
             
             <form action="<?php echo SITEURL; ?>food-search.php" method="POST">

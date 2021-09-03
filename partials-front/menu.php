@@ -21,7 +21,7 @@ include ('config/constants.php');
         <div class="container">
             <div class="logo">
                 <a href="index.php" title="Logo">
-                    <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive">
+                    <img src="images/logo_transparent.png" alt="Restaurant Logo" class="img-responsive">
                 </a>
             </div>
 

@@ -14,7 +14,7 @@
 
 <body >
     <!-- CAtegories Section Starts Here -->
-    <section class="categories food-search">
+    <section class="categories food-search bg">
         <div class="container" style="padding: 6% 0;">
             <h2 class="text-center">Payment</h2>
 

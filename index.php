@@ -14,7 +14,7 @@
     ?>
 
     <!-- fOOD sEARCH Section Starts Here -->
-    <section class="food-search text-center  ">
+    <section class="food-search text-center bg ">
         <div class="container" style="padding: 6% 0;">
             <form action="food-search.php" method="POST">
                 <input type="search" name="search" placeholder="Search for Food.." required>
@@ -36,7 +36,7 @@
     <!-- CAtegories Section Starts Here -->
     
         <div class="container categories ">
-            <span style="color: black;"><h2 class="text-center">Explore Foods</h2></span>
+            <span style="color: black;"><h2 class="text-center ">Explore Foods</h2></span>
 
             <?php 
                 //Create SQL Query to Display CAtegories from Database
