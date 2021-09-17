@@ -24,16 +24,17 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
 
 <link rel="stylesheet" href="css/style.css">
 <!-- *********************************************************** -->
-<body class="food-search">
+<body >
+    <section class="food-search">
 <div class="container" style="padding: 6% 0;">
     <div class="row">
         <div class="col-12 col-sm-12 col-md-12">
-            <h3>Order</h3>
+            <h2>Order</h2>
             <h4>
                 OrderID : <?php echo $rowdetail['o_id']; ?><br>
                 วัน/เวลา : <?php echo $rowdetail['dttm']; ?><br>
             </h4>
-            <table class="table table-bordered table-hover table-striped">
+            <table class="table table-bordered table-hover table-striped" style="background-color: lavenderblush;">
                 <tr>
                     <th width="5%" bgcolor="">#</td>
                     <th width="10%" bgcolor="">img</td>
@@ -71,4 +72,5 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
         </div>
     </div>
 </div>
+</section>
 </body>

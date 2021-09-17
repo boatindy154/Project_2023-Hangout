@@ -40,7 +40,7 @@ include ('config/constants.php');
                         <a href="foods.php">Foods</a>
                     </li>
                     <li>
-                        <a href="order_detail.php">Order</a>
+                        <a href="list_order.php">Order</a>
                     </li>
                     <li>
                         <a href="paymenttest.php">Payment</a>
