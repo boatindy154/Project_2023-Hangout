@@ -1,5 +1,8 @@
 <?php include('partials/menu.php'); ?>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<section class="bg food-search">
 <div class="main-content">
     <div class="wrapper">
         <h1>Add Admin</h1>
@@ -14,7 +17,7 @@
             }
         ?>
 
-        <form action="" method="POST">
+        <form action="" method="POST" style="display: table; background-color: lavenderblush;  padding: 2% " >
 
             <table class="tbl-30">
                 <tr>
@@ -78,7 +81,7 @@
         ";
  
         //3. Executing Query and Saving Data into Datbase
-        $res = mysqli_query($conn, $sql) or die(mysqli_error());
+        $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
         //4. Check whether the (Query is Executed) data is inserted or not and display appropriate message
         if($res==TRUE)
@@ -103,3 +106,5 @@
     }
     
 ?>
+<br><br><br><br><br><br><br><br><br><br><br>
+</section>

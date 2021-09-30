@@ -1,5 +1,8 @@
 <?php include('partials/menu.php'); ?>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<section class="bg food-search">
 <?php 
     //CHeck whether id is set or not 
     if(isset($_GET['id']))
@@ -8,7 +11,7 @@
         $id = $_GET['id'];
 
         //SQL Query to Get the Selected Food
-        $sql2 = "SELECT * FROM tbl_food WHERE id=$id";
+        $sql2 = "SELECT * FROM tbl_food WHERE p_id=$id";
         //execute the Query
         $res2 = mysqli_query($conn, $sql2);
 
@@ -38,7 +41,7 @@
         <h1>Update Food</h1>
         <br><br>
 
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data" style="display: table; background-color: lavenderblush; padding: 2%">
         
         <table class="tbl-30">
 
@@ -282,5 +285,5 @@
 
     </div>
 </div>
-
+</section>
 <?php include('partials/footer.php'); ?>

@@ -27,7 +27,7 @@
         <br><br>
 
         <!-- Add CAtegory Form Starts -->
-        <form action="" method="POST" enctype="multipart/form-data" style="background-color: lavenderblush;">
+        <form action="" method="POST" enctype="multipart/form-data" style="display: table; background-color: lavenderblush; padding: 2%">
 
             <table class="tbl-30">
                 <tr>

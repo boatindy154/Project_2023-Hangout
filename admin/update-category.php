@@ -1,5 +1,8 @@
 <?php include('partials/menu.php'); ?>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<section class="bg food-search">
 <div class="main-content">
     <div class="wrapper">
         <h1>Update Category</h1>
@@ -49,7 +52,7 @@
         
         ?>
 
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data" style="display: table; background-color: lavenderblush; padding: 2%">
 
             <table class="tbl-30">
                 <tr>
@@ -232,5 +235,5 @@
 
     </div>
 </div>
-
+</section>
 <?php include('partials/footer.php'); ?>
