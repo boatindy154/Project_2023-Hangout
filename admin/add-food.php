@@ -171,10 +171,10 @@
                         // Image is SElected
                         //A. REnamge the Image
                         //Get the extension of selected image (jpg, png, gif, etc.) "vijay-thapa.jpg" vijay-thapa jpg
-                        $ext = end(explode('.', $image_name));
+                        $ext = explode('.', $image_name);
 
                         // Create New Name for Image
-                        $image_name = "Food-Name-".rand(0000,9999).".".$ext; //New Image Name May Be "Food-Name-657.jpg"
+                        // $image_name = "Food-Name-".rand(0000,9999).".".$ext; //New Image Name May Be "Food-Name-657.jpg"
 
                         //B. Upload the Image
                         //Get the Src Path and DEstinaton path

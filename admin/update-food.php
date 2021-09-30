@@ -152,7 +152,7 @@
             <tr>
                 <td>
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
-                    <input type="hidden" name="current_image" value="<?php echo $current_image; ?>">
+                    
 
                     <input type="submit" name="submit" value="Update Food" class="btn-secondary">
                 </td>
@@ -173,7 +173,7 @@
                 $title = $_POST['title'];
                 $description = $_POST['description'];
                 $price = $_POST['price'];
-                $current_image = $_POST['current_image'];
+                // $current_image = $_POST['current_image'];
                 $category = $_POST['category'];
 
                 $featured = $_POST['featured'];
@@ -194,9 +194,9 @@
                         //A. Uploading New Image
 
                         //REname the Image
-                        $ext = end(explode('.', $image_name)); //Gets the extension of the image
+                        $ext = explode('.', $image_name); //Gets the extension of the image
 
-                        $image_name = "Food-Name-".rand(0000, 9999).'.'.$ext; //THis will be renamed image
+                        // $image_name = "Food-Name-".rand(0000, 9999).'.'.$ext; //THis will be renamed image
 
                         //Get the Source Path and DEstination PAth
                         $src_path = $_FILES['image']['tmp_name']; //Source Path
@@ -221,20 +221,20 @@
                         {
                             //Current Image is Available
                             //REmove the image
-                            $remove_path = "../images/food/".$current_image;
+                            $remove_path = $current_image;
 
-                            $remove = unlink($remove_path);
+                            // $remove = unlink($remove_path);
 
                             //Check whether the image is removed or not
-                            if($remove==false)
-                            {
-                                //failed to remove current image
-                                $_SESSION['remove-failed'] = "<div class='error'>Faile to remove current image.</div>";
-                                //redirect to manage food
-                                header('location:'.SITEURL.'admin/manage-food.php');
-                                //stop the process
-                                die();
-                            }
+                            // if($remove==false)
+                            // {
+                            //     //failed to remove current image
+                            //     $_SESSION['remove-failed'] = "<div class='error'>Faile to remove current image.</div>";
+                            //     //redirect to manage food
+                            //     header('location:'.SITEURL.'admin/manage-food.php');
+                            //     //stop the process
+                            //     die();
+                            // }
                         }
                     }
                     else
@@ -258,7 +258,7 @@
                     category_id = '$category',
                     featured = '$featured',
                     active = '$active'
-                    WHERE id=$id
+                    WHERE p_id=$id
                 ";
 
                 //Execute the SQL Query

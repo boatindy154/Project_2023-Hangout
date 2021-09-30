@@ -1,9 +1,9 @@
-<?php include('partials-front/menu.php');
-session_start();
+<?php include('partials/menu.php');
+// session_start();
 $m_id = $_SESSION['id'];
-$full_name = $_SESSION['full_name'];
-$userlevel = $_SESSION['userlevel'];
-include 'config/constantss.php';
+// $full_name = $_SESSION['full_name'];
+// $userlevel = $_SESSION['userlevel'];
+include '../config/constantss.php';
 
 $o_id = $_GET['o_id'];
 
@@ -22,17 +22,18 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
 <!-- Link our CSS file -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<link rel="stylesheet" href="css/style.css">
+<!-- <link rel="stylesheet" href="css/style.css"> -->
 <!-- *********************************************************** -->
 <body >
     <section class="food-search">
-<div class="container" style="padding: 6% 0;">
-    <div class="row">
-        <div class="col-12 col-sm-12 col-md-12">
+<div class="main-content1" >
+    <div class="wrapper">
+        
             <h2>Order</h2>
             <h4>
                 OrderID : <?php echo $rowdetail['o_id']; ?><br>
                 วัน/เวลา : <?php echo $rowdetail['dttm']; ?><br>
+                Status : <?php  ?>
             </h4>
             <table class="table table-bordered table-hover table-striped" style="background-color: lavenderblush;">
                 <tr>
@@ -53,7 +54,8 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
                     $total += $row["d_subtotal"]; //ราคารวมทั้งออเดอร์
                     echo "<tr>";
                     echo "<td >" . @$i += 1 . "</td>";
-                    echo "<td>" . "<img src='images/food/" . $row['image_name'] . "' width='100px'>" . "</td>";
+                    // echo "<td><div class='error'>Image not Available.</div></td>";
+                    echo "<td>" . "<img src='../images/food/" . $row['image_name'] . "' width='100px'>" . "</td>";
                     echo "<td >" . $row["title"] . "</td>";
                     echo "<td align='right' >" . number_format($row["price"], 2) . "</td>";
                     echo "<td align='right' >" . number_format($row["d_qty"], 2) . "</td>";
@@ -69,10 +71,10 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
 
                 ?>
             </table>
-        </div>
+        
     </div>
 </div>
 </section>
 </body>
 
-<?php include('partials-front/footer.php'); ?>
+<?php include('partials/footer.php'); ?>

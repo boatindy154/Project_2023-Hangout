@@ -19,26 +19,26 @@
         {
             // IT has image and need to remove from folder
             //Get the Image Path
-            $path = "../images/food/".$image_name;
+            $path = "..".$image_name;
 
             //REmove Image File from Folder
             $remove = unlink($path);
 
             //Check whether the image is removed or not
-            if($remove==false)
-            {
-                //Failed to Remove image
-                $_SESSION['upload'] = "<div class='error'>Failed to Remove Image File.</div>";
-                //REdirect to Manage Food
-                header('location:'.SITEURL.'admin/manage-food.php');
-                //Stop the Process of Deleting Food
-                die();
-            }
+            // if($remove==false)
+            // {
+            //     //Failed to Remove image
+            //     $_SESSION['upload'] = "<div class='error'>Failed to Remove Image File.</div>";
+            //     //REdirect to Manage Food
+            //     header('location:'.SITEURL.'admin/manage-food.php');
+            //     //Stop the Process of Deleting Food
+            //     die();
+            // }
 
         }
 
         //3. Delete Food from Database
-        $sql = "DELETE FROM tbl_food WHERE id=$id";
+        $sql = "DELETE FROM tbl_food WHERE p_id=$id";
         //Execute the Query
         $res = mysqli_query($conn, $sql);
 
@@ -47,13 +47,13 @@
         if($res==true)
         {
             //Food Deleted
-            $_SESSION['delete'] = "<div class='success'>Food Deleted Successfully.</div>";\
+            $_SESSION['delete'] = "<div class='success'>Food Deleted Successfully.</div>";
             header('location:'.SITEURL.'admin/manage-food.php');
         }
         else
         {
             //Failed to Delete Food
-            $_SESSION['delete'] = "<div class='error'>Failed to Delete Food.</div>";\
+            $_SESSION['delete'] = "<div class='error'>Failed to Delete Food.</div>";
             header('location:'.SITEURL.'admin/manage-food.php');
         }
 

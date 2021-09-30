@@ -15,7 +15,7 @@
             }
             ?>
             <br><br>
-
+            <form action="?act=update" method="post" >
             <table class="table table-bordered table-hover table-striped" style="background-color: lavenderblush;">
                 <tr>
                     <th>S.N.</th>
@@ -82,7 +82,7 @@
                             <td><?php echo $phone; ?></td>
                             <td><?php echo $email; ?></td>
                             <td>
-                                <a href="<?php echo SITEURL; ?>admin/update-order.php?id=<?php echo $id; ?>" class="btn-secondary">Update Order</a>
+                                <a href="update-ordertest.php?o_id=<?php echo $o_id; ?>&do=watch" class="btn-secondary">Update Order</a>
                             </td>
                         </tr>
 
@@ -97,6 +97,7 @@
 
 
             </table>
+            </form>
         </div>
 
     </div>
