@@ -6,16 +6,16 @@
 ?>
 
 
-<html>
+
     <head>
         <title>Food Order Website - Home Page</title>
-
+        <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/admin.css">
     </head>
     
     <body>
         <!-- Menu Section Starts -->
-        <div class="menu text-center">
+        <section class="menu text-center navv">
             <div class="wrapper">
                 <ul>
                     <li><a href="index.php">Home</a></li>
@@ -27,5 +27,5 @@
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </div>
-        </div>
+        </section>
         <!-- Menu Section Ends -->

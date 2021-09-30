@@ -1,8 +1,8 @@
 
 <?php include('partials/menu.php'); ?>
-
         <!-- Main Content Section Starts -->
-        <div class="main-content">
+        <section class="bg food-search">
+        <div class="main-content1">
             <div class="wrapper">
                 <h1>Dashboard</h1>
                 <br><br>
@@ -91,5 +91,6 @@
             </div>
         </div>
         <!-- Main Content Setion Ends -->
+        </section>
 
 <?php include('partials/footer.php') ?>

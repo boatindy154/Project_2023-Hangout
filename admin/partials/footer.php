@@ -1,5 +1,6 @@
 <!-- Footer Section Starts -->
-<div class="footer">
+
+<div class="footer fixed-bottom">
     <br>
     
             <div class="wrapper">
@@ -10,4 +11,4 @@
         <!-- Footer Section Ends -->
 
     </body>
-</html>
+    </html>
