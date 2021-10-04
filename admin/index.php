@@ -1,5 +1,6 @@
 
-<?php include('partials/menu.php'); ?>
+<?php include('partials/menu.php'); 
+?>
         <!-- Main Content Section Starts -->
         <section class="bg food-search">
         <div class="main-content1">

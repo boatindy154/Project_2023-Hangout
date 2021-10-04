@@ -1,5 +1,5 @@
 <?php include('../config/constants.php'); 
-session_start();?>
+// session_start();?>
 <html>
     <head>
         <title>Login - Food Order System</title>

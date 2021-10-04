@@ -14,7 +14,7 @@
     ?>
 
     <!-- fOOD sEARCH Section Starts Here -->
-    <section class="food-search text-center bg ">
+    <section class="food-search text-center bg">
         <div class="container" style="padding: 6% 0;">
             <form action="food-search.php" method="POST">
                 <input type="search" name="search" placeholder="Search for Food.." required>
@@ -181,9 +181,9 @@
 
         </div>
 
-        <p class="text-center">
+        <!-- <p class="text-center">
             <a href="#">See All Foods</a>
-        </p>
+        </p> -->
     </section>
     <!-- fOOD Menu Section Ends Here -->
 

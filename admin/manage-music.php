@@ -77,7 +77,7 @@
 
                             <td><?php echo $customer_name; ?></td>
                             <td>
-                                <a href="<?php echo SITEURL; ?>admin/update-music.php?id=<?php echo $id; ?>" class="btn-secondary">Update Order</a>
+                                <a href="<?php echo SITEURL; ?>admin/update-music.php?id=<?php echo $id; ?>" class="btn-secondary">Update Music</a>
                             </td>
                         </tr>
 
