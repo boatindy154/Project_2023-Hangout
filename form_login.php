@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/login.css">
 	<title>Login Page</title>
 </head>
-<body class="bglogin">
+<body class="bglogin" style="background-attachment: fixed;">
 	<!-- Main Content -->
 	
     <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
@@ -47,7 +47,7 @@
               </form>
             </div>
           </div>
-          <div class="footer-link padding-top--24">
+          <div class="footer-link ">
             <span>Don't have an account? <a href="register.php">Sign up</a></span>
             <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
               <!-- <span><a href="#">© Stackfindover</a></span>

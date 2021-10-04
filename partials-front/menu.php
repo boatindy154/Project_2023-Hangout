@@ -12,7 +12,8 @@ include ('config/constantss.php');
 
     <!-- Link our CSS file -->
     
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" >
+    
 </head>
 
 <body>
@@ -21,7 +22,7 @@ include ('config/constantss.php');
         <div class="container">
             <div class="logo">
                 <a href="index.php" title="Logo">
-                    <img src="images/logo_transparent.png" alt="Restaurant Logo" class="img-responsive">
+                    <img src="images/logo_transparent1.png" alt="Restaurant Logo" class="img-responsive">
                 </a>
             </div>
 
@@ -38,6 +39,9 @@ include ('config/constantss.php');
                     </li>
                     <li>
                         <a href="foods.php">Foods</a>
+                    </li>
+                    <li>
+                        <a href="match.php">Table</a>
                     </li>
                     <li>
                         <a href="list_order.php">Order</a>

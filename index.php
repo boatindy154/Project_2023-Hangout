@@ -14,8 +14,9 @@
     ?>
 
     <!-- fOOD sEARCH Section Starts Here -->
-    <section class="food-search text-center bg">
-        <div class="container" style="padding: 6% 0;">
+    <section class="food-search text-center " style="background-image: url(images/111.png); background-attachment: fixed; " >
+     <div class="overlay" style="padding-bottom: 110%;"></div>
+        <div class="container" style="padding: 6% 0; position: relative;">
             <form action="food-search.php" method="POST">
                 <input type="search" name="search" placeholder="Search for Food.." required>
                 <input type="submit" name="submit" value="Search" class="btn btn-primary">
@@ -36,7 +37,7 @@
     <!-- CAtegories Section Starts Here -->
     
         <div class="container categories ">
-            <span style="color: black;"><h2 class="text-center ">Explore Foods</h2></span>
+            <span style="color: black;"><h2 class="text-center " style="position: relative; color:white">Explore Foods</h2></span>
 
             <?php 
                 //Create SQL Query to Display CAtegories from Database
@@ -100,8 +101,8 @@
 
     <!-- fOOD MEnu Section Starts Here -->
         
-        <div class="food-menu container">
-            <h2 class="text-center">Food Menu</h2>
+        <div class="food-menu container" style="position: relative;">
+            <h2 class="text-center" style="position: relative; color:white">Food Menu</h2>
 
             <?php 
             
@@ -181,9 +182,9 @@
 
         </div>
 
-        <!-- <p class="text-center">
-            <a href="#">See All Foods</a>
-        </p> -->
+        <p class="text-center" style="position: relative;">
+            <a href="foods.php">See All Foods</a>
+        </p>
     </section>
     <!-- fOOD Menu Section Ends Here -->
 

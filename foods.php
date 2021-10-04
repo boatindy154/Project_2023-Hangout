@@ -3,8 +3,9 @@
     include('partials-front/menu.php'); ?>
 
     <!-- fOOD sEARCH Section Starts Here -->
-    <section class="food-search text-center bg">
-        <div class="container" style="padding: 6% 0;">
+    <section class="food-search text-center bg" style="background-image: url(images/111.png); background-attachment: fixed;">
+    <div class="overlay" style="padding-bottom: 106%;"></div>
+        <div class="container" style="padding: 6% 0; position: relative; ">
             
             <form action="<?php echo SITEURL; ?>food-search.php" method="POST">
                 <input type="search" name="search" placeholder="Search for Food.." required>
@@ -18,8 +19,8 @@
 
 
     <!-- fOOD MEnu Section Starts Here -->
-        <div class="container food-menu">
-            <h2 class="text-center">Food Menu</h2>
+        <div class="container food-menu" style="position: relative; width:79%">
+            <h2 class="text-center" style="color: white;">Food Menu</h2>
 
             <?php 
                 //Display Foods that are Active

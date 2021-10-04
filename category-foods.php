@@ -33,10 +33,11 @@
 
 
     <!-- fOOD sEARCH Section Starts Here -->
-    <section class="food-search text-center ">
-        <div class="container" style="padding: 6% 0;">
+    <section class="food-search text-center " style="background-image: url(images/111.png); background-attachment: fixed;">
+    <div class="overlay" style="padding-bottom: 67%;"></div>
+        <div class="container" style="padding: 6% 0; position: relative;">
             
-            <h2>Foods on <a href="#" class="text-white">"<?php echo $category_title; ?>"</a></h2>
+            <h2 style="color: gray;">Foods on <a href="#" class="text-white">"<?php echo $category_title; ?>"</a></h2>
 
         </div>
     <!-- fOOD sEARCH Section Ends Here -->
@@ -44,8 +45,8 @@
 
 
     <!-- fOOD MEnu Section Starts Here -->
-        <div class="container food-menu ">
-            <h2 class="text-center">Food Menu</h2>
+        <div class="container food-menu " style="position: relative; width:79%">
+            <h2 class="text-center" style="color: white;">Food Menu</h2>
 
             <?php 
             

@@ -20,11 +20,12 @@ $rsorder = mysqli_query($conn, $queryorder);
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<section class="food-search">
+<section class="food-search" style="background-image: url(images/111.png); background-attachment: fixed;">
+<div class="overlay" style="padding-bottom: 47%;"></div>
     <div class="container " style="padding: 6% 0;">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12">
-                <h2>Order List</h3>
+                <h2 style="color: white;">Order List</h3>
                     <form id="frmcart" name="frmcart" method="post" action="?act=update">
                         <table class="table table-bordered table-hover table-striped" style="background-color: lavenderblush;">
                             <thead>
@@ -86,6 +87,7 @@ $rsorder = mysqli_query($conn, $queryorder);
             </div>
         </div>
     </div>
+    <br><br><br><br><br><br><br>
 </section>
 
 </html>

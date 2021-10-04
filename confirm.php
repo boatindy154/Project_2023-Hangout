@@ -37,11 +37,12 @@ $rowmember = mysqli_fetch_array($rsmember);
   <title>Shopping Cart</title>
 </head>
 
-<section class="food-search">
-  <div class="container " style="padding: 6% 0;">
+<section class="food-search" style="background-image: url(images/111.png); background-attachment: fixed; ">
+<div class="overlay" style="padding-bottom: 63%;"></div>
+  <div class="container " style="padding: 6% 0; position: relative;">
     <div class="row">
       <div class="col-12 col-sm-12 col-md-12">
-        <h3>ยืนยันการสั่งซื้อ</h3>
+        <h3 class="text-white">ยืนยันการสั่งซื้อ</h3>
         <form id="frmcart" name="frmcart" method="post" action="saveorder.php">
           <table class="table table-bordered table-hover table-striped" style="background-color: lavenderblush;">
             <tr>
@@ -82,25 +83,19 @@ $rowmember = mysqli_fetch_array($rsmember);
             }
             ?>
           </table>
-          <h3>รายละเอียด</h3>
+          <h3 class="text-white">รายละเอียด</h3>
           
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputEmail4">ชื่อ - นามสกุล</label>
+                <label for="inputEmail4" class="text-white">ชื่อ - นามสกุล</label>
                 <input type="text" class="form-control" 
                  name="full_name" value="<?php echo $rowmember['full_name'];?>">
               </div>
             </div>
+
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="text" class="form-control" id="inputEmail4" name="email"
-                name="full_name" value="<?php echo $rowmember['email'];?>">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">เบอร์โทร</label>
+                <label for="inputEmail4" class="text-white">เบอร์โทร</label>
                 <input type="text" class="form-control" id="inputEmail4" name="phone"
                 name="full_name" value="<?php echo $rowmember['phone'];?>">
               </div>
@@ -116,3 +111,4 @@ $rowmember = mysqli_fetch_array($rsmember);
   </section>
 
 </html>
+<?php include('partials-front/footer.php'); ?>

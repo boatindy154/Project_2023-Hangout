@@ -2,10 +2,11 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<section class="bg food-search">
-<div class="main-content">
+<section class="bg food-search" style="background-image: url(../images/111.png); background-attachment: fixed;">
+<div class="overlay" style="padding-bottom: 49%;"></div>
+<div class="main-content" style="position: relative;">
     <div class="wrapper">
-        <h1>Update Category</h1>
+        <h1 class="text-white">Update Category</h1>
 
         <br><br>
 

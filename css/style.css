@@ -50,7 +50,7 @@ a{
     text-decoration: none;
 }
 a:hover{
-    color: #2f3542;
+    color: #ff7b00;
 }
 
 .btn{
@@ -77,19 +77,20 @@ a:hover{
     color: white;
     background-color: #ff6348;
 }
-.btn-success{
+.btn-success1{
     background-color: #7bed9f;
     color: white;
     cursor: pointer;
 }
-.btn-success:hover{
+.btn-success1:hover{
     color: white;
     background-color: #2ed573;
 }
 h2{
-    color: rgba(57, 57, 57, 0.9);
+    color: rgba(255, 255, 255, 0.9);
     font-size: 2rem;
     margin-bottom: 2%;
+    position: relative;
 }
 h3{
     font-size: 1.5rem;
@@ -142,11 +143,29 @@ fieldset{
 /* CSS for Food SEarch Section */
 
 .food-search{
-    background-image: url(../images/bg_4.png);
+    background-image: url(../images/111.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     padding: 5% 0;
+}
+.food-searchtest{
+    background-image: url(images/111.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 5% 0;
+    background-attachment: fixed;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background: #000000;
+    opacity: 0.5;
 }
 
 .food-search input[type="search"]{
@@ -243,9 +262,9 @@ fieldset{
         margin: 1% auto;
     }
 
- .bg{
+ /* .bg{
     background-attachment: fixed;
-background-image: url(../images/bg_4.jpg);
+background-image: url(../images/background.png);
 background-size: cover;
 background-repeat: no-repeat;
 top: 0;
@@ -255,7 +274,7 @@ bottom: 0;
 content: "";
 opacity: 0.9;
 
-} 
+}  */
     .menu ul{
         text-align: center;
     }

@@ -25,15 +25,26 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
 <!-- <link rel="stylesheet" href="css/style.css"> -->
 <!-- *********************************************************** -->
 <body >
-    <section class="food-search">
-<div class="main-content1" >
+    <section class="food-search" style="background-image: url(../images/111.png); background-attachment: fixed;">
+    <div class="overlay" style="padding-bottom: 51%;"></div>
+<div class="main-content1" style="position: relative;">
     <div class="wrapper">
         
-            <h2>Order</h2>
-            <h4>
+            <h2 class="text-white">Order</h2>
+            <h4 class="text-white">
                 OrderID : <?php echo $rowdetail['o_id']; ?><br>
                 วัน/เวลา : <?php echo $rowdetail['dttm']; ?><br>
-                Status : <?php  ?>
+                Status : <?php if ($rowdetail['status'] == "1") {
+                                    echo "<font color = 'blue'>";
+                                    echo 'รอชำระเงิน';
+                                } elseif ($rowdetail['status'] == "2") {
+                                    echo "<font color = '#3cb329'>";
+                                    echo 'ชำระเงินแล้ว';
+                                } elseif ($rowdetail['status'] == "3") {
+                                    echo "<font color = 'red'>";
+                                    echo 'ยกเลิก';
+                                }
+                                ?> 
             </h4>
             <table class="table table-bordered table-hover table-striped" style="background-color: lavenderblush;">
                 <tr>
@@ -70,6 +81,20 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
                 echo "</tr>";
 
                 ?>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="6" align="right">
+                    <input type="button" class="btn btn-success" name="Submit2" value="เพิ่มรายการ" onclick="window.
+                                location='admin/update-order2.php';"/>
+                    <input type="button" class="btn btn-primary" name="Submit2" value="ลบรายการ" onclick="window.
+                                location='admin/update-order2.php';"/>
+                    </td>
+                </tr>
+
+
+
             </table>
         
     </div>

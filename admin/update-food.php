@@ -2,7 +2,8 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<section class="bg food-search">
+<section class="bg food-search" style="background-image: url(../images/111.png); background-attachment: fixed;">
+<div class="overlay" style="padding-bottom: 51%;"></div>
 <?php 
     //CHeck whether id is set or not 
     if(isset($_GET['id']))
@@ -36,9 +37,9 @@
 ?>
 
 
-<div class="main-content">
+<div class="main-content" style="position: relative;">
     <div class="wrapper">
-        <h1>Update Food</h1>
+        <h1 class="text-white">Update Food</h1>
         <br><br>
 
         <form action="" method="POST" enctype="multipart/form-data" style="display: table; background-color: lavenderblush; padding: 2%">
@@ -263,14 +264,17 @@
 
                 //Execute the SQL Query
                 $res3 = mysqli_query($conn, $sql3);
-
+                ?>
                 //CHeck whether the query is executed or not 
-                if($res3==true)
-                {
+                <?php if($res3==true)
+                { 
                     //Query Exectued and Food Updated
-                    $_SESSION['update'] = "<div class='success'>Food Updated Successfully.</div>";
-                    header('location:'.SITEURL.'admin/manage-food.php');
-                }
+                    $_SESSION['update'] = "<div class='success'>Food Updated Successfully.</div>";?>
+                    <script type="text/javascript">
+	                window.location="manage-food.php";
+                    </script>
+                    <!-- // header('location:'.SITEURL.'admin/manage-food.php'); -->
+               <?php }
                 else
                 {
                     //Failed to Update Food
@@ -279,9 +283,9 @@
                 }
 
                 
-            }
+            }?>
         
-        ?>
+        
 
     </div>
 </div>

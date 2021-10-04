@@ -33,7 +33,7 @@ session_start();
 
                       if ($_SESSION["userlevel"]=="M"){  //ถ้าเป็น member ให้กระโดดไปหน้า user_page.php
 
-                        Header("Location: index.php");
+                        Header("Location: table.php");
 
                       }
 

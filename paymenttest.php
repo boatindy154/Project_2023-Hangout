@@ -14,12 +14,13 @@
 
 <body >
     <!-- CAtegories Section Starts Here -->
-    <section class="categories food-search bg">
-        <div class="container" style="padding: 6% 0;">
-            <h2 class="text-center">Payment</h2>
+    <section class="categories food-search bg"  style="background-image: url(images/111.png); background-attachment: fixed;">
+    <div class="overlay" style="padding-bottom: 55%;"></div>
+        <div class="container" style="padding: 6% 0; position: relative;">
+            <h2 class="text-center text-white">Payment</h2>
 
-            <a href="category-foods.html">
-                <div class="box-3 float-container">
+            <a href="category-foods.html" >
+                <div class="box-3 float-container" style="padding-left: 18%;">
                     <img src="images/cash.png" alt="Pizza" class="img-responsive img-curve">
 
                     <!-- <h3 class="float-text text-white">เงินสด</h3> -->
@@ -27,20 +28,20 @@
             </a>
 
             <a href="#">
-                <div class="box-3 float-container">
+                <div class="box-3 float-container" >
                     <img src="images/qrcode.jfif" alt="Burger" class="img-responsive img-curve">
 
                     <!-- <h3 class="float-text text-white">พร้อมเพย์</h3> -->
                 </div>
             </a>
 
-            <a href="#">
+            <!-- <a href="#">
                 <div class="box-3 float-container">
                     <img src="images/credit card.png" alt="Burger" class="img-responsive img-curve" style="
     background-color: antiquewhite;">
-                    <!-- <h3 class="float-text text-white">พร้อมเพย์</h3> -->
+                    <h3 class="float-text text-white">พร้อมเพย์</h3>
                 </div>
-            </a>
+            </a> -->
 
 
 
