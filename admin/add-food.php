@@ -230,9 +230,11 @@
                 if($res2 == true)
                 {
                     //Data inserted Successfullly
-                    $_SESSION['add'] = "<div class='success'>Food Added Successfully.</div>";
-                    header('location:'.SITEURL.'admin/manage-food.php');
-                }
+                    $_SESSION['add'] = "<div class='success'>Food Added Successfully.</div>";?>
+                    <script type="text/javascript">
+	                window.location="manage-food.php";
+                    </script>
+               <?php }
                 else
                 {
                     //FAiled to Insert Data
@@ -242,8 +244,8 @@
 
                 
             }
-
-        ?>
+?>
+        
 
 
     </div>

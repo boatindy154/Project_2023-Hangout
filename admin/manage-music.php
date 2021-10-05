@@ -22,12 +22,12 @@
                 <tr>
                     <th>S.N.</th>
                     <th>Song</th>
-                    <th>Type</th>
-                    <th>Qty.</th>
+                    <!-- <th>Type</th> -->
+                    <!-- <th>Qty.</th> -->
                     <th>Order Date</th>
                     <th>Status</th>
                     <th>Customer Name</th>
-                    <th>Actions</th>
+                    <!-- <th>Actions</th> -->
                 </tr>
 
                 <?php
@@ -57,29 +57,29 @@
                         <tr>
                             <td><?php echo $sn++; ?>. </td>
                             <td><?php echo $song; ?></td>
-                            <td><?php echo $type; ?></td>
-                            <td><?php echo $qty; ?></td>
+ 
                             <td><?php echo $music_date; ?></td>
                             <!-- <td><?php echo $status; ?></td> -->
 
                             <td>
                                 <?php
                                 // Ordered, On Delivery, Delivered, Cancelled
-
-                                if ($status == "finish") {
-                                    echo "<label>$status</label>";
-                                } elseif ($status == "playing") {
-                                    echo "<label style='color: orange;'>$status</label>";
-                                } elseif ($status == "Cancelled") {
-                                    echo "<label style='color: red;'>$status</label>";
+                             
+                                if ($status == "1") {
+                                    echo "<font color = 'blue'>";
+                                    echo 'Playing';
+                                } elseif ($status == "2") {
+                                    echo "<font color = '#3cb329'>";
+                                    echo 'ชำระเงินแล้ว';
+                                } elseif ($status == "3") {
+                                    echo "<font color = 'red'>";
+                                    echo 'ยกเลิก';
                                 }
                                 ?>
                             </td>
 
                             <td><?php echo $customer_name; ?></td>
-                            <td>
-                                <a href="<?php echo SITEURL; ?>admin/update-music.php?id=<?php echo $id; ?>" class="btn-secondary">Update Music</a>
-                            </td>
+                            
                         </tr>
 
                 <?php

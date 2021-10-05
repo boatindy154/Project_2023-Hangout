@@ -9,7 +9,7 @@ $sn = 1;
 
 <!-- music sEARCH Section Starts Here -->
 <section class=" food-search text-center" style="background-image: url(images/111.png); background-attachment: fixed;">
-    <div class="overlay" style="padding-bottom: 84%;"></div>
+    <div class="overlay" style="padding-bottom: 65%;"></div>
     <div class="container " style="padding: 6% 0; position: relative;">
 
         <form action="" method="POST">
@@ -20,7 +20,7 @@ $sn = 1;
     <!-- music sEARCH Section Ends Here -->
     <div class="container food-menu" style="position: relative; background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(47, 26, 2, 0.8) 100%);
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 20px; height: 700px;">
+border-radius: 20px; height: 400px;">
         <h2 class="text-center text-white">Music</h2>
         <?php 
             if(isset($_SESSION['add'])) //Checking whether the SEssion is Set of Not
@@ -34,7 +34,7 @@ border-radius: 20px; height: 700px;">
         ?>
             <div class="">
                 <div class="food-menu-desc text-white text-center" style="margin-left: 14%; float: left;">
-                    <h3 class="" style="float: left; padding-bottom:2%"><?php echo $sn++; ?>. <?php echo $row['song']; ?> </h4>
+                    <h3 class="" style="float: left; padding-bottom:2% "><?php echo $sn++; ?>. <?php echo $row['song']; ?> </h4>
                         <br>
                 </div>
             </div>

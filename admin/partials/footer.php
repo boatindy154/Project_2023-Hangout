@@ -1,6 +1,6 @@
 <!-- Footer Section Starts -->
 
-<div class="footer fixed-bottom" style="position: relative;">
+<div class="social footer fixed-bottom" style="position: relative;">
     <br>
     
     <div class="container text-center">

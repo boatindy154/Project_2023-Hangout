@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <section class="bg food-search" style="background-image: url(../images/111.png); background-attachment: fixed;">
-<div class="overlay" style="padding-bottom: 50%;"></div>
+<div class="overlay" style="padding-bottom: 55%;"></div>
     <div class="main-content1" style="position: relative;">
         <div class="wrapper">
             <h1 class="text-white">Manage Order</h1>
@@ -26,7 +26,7 @@
                     <th>Status</th>
                     <th>Customer Name</th>
                     <th>Phone</th>
-                    <th>Email</th>
+                    <!-- <th>Email</th> -->
                     <th>Actions</th>
                 </tr>
 
@@ -81,7 +81,7 @@
 
                             <td><?php echo $full_name; ?></td>
                             <td><?php echo $phone; ?></td>
-                            <td><?php echo $email; ?></td>
+                            
                             <td>
                                 <a href="update-ordertest.php?o_id=<?php echo $o_id; ?>&do=watch" class="btn-secondary">Update Order</a>
                             </td>

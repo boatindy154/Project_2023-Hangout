@@ -1,7 +1,7 @@
 
 <?php include('partials/menu.php'); 
 // session_start();
-$userlevel = $_SESSION['userlevel'];
+// $userlevel = $_SESSION['userlevel'];
 ?>
         <!-- Main Content Section Starts -->
         <section class=" food-search" style="background-image: url(../images/111.png); background-attachment: fixed; ">
@@ -11,9 +11,7 @@ $userlevel = $_SESSION['userlevel'];
                 <h1 class="text-white">Dashboard</h1>
                 <br><br>
                 <?php 
-                if($userlevel!='A'){
-                    Header("Location: login.php");
-                }
+                
                     if(isset($_SESSION['login']))
                     {
                         echo $_SESSION['login'];
