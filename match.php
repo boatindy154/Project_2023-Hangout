@@ -50,7 +50,7 @@ $result = mysqli_query($condb, $query);
     </style>
   </head>
     <section class="food-search" style="background-image: url(images/111.png); background-attachment: fixed;">
-    <div class="overlay" style="padding-bottom: 58%;"></div>
+    <div class="overlay"></div>
     <div class="container " style="padding: 6% 0;">
       <div class="row">
         <div class="col-sm-2 col-md-2" style="padding-left: 20%;"></div>

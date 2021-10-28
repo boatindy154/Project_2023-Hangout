@@ -9,7 +9,7 @@ $sn = 1;
 
 <!-- music sEARCH Section Starts Here -->
 <section class=" food-search text-center" style="background-image: url(images/111.png); background-attachment: fixed;">
-    <div class="overlay" style="padding-bottom: 65%;"></div>
+    <div class="overlay" ></div>
     <div class="container " style="padding: 6% 0; position: relative;">
 
         <form action="" method="POST">

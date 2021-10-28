@@ -14,8 +14,8 @@
     ?>
 
     <!-- fOOD sEARCH Section Starts Here -->
-    <section class="food-search text-center " style="background-image: url(images/111.png); background-attachment: fixed; " >
-     <div class="overlay" style="padding-bottom: 110%;"></div>
+    <section class="food-search text-center " style="background-image: url(images/111.png); background-attachment: fixed; "  >
+     <div class="overlay"></div>
         <div class="container" style="padding: 6% 0; position: relative;">
             <form action="food-search.php" method="POST">
                 <input type="search" name="search" placeholder="Search for Food.." required>

@@ -34,7 +34,7 @@
 
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center " style="background-image: url(images/111.png); background-attachment: fixed;">
-    <div class="overlay" style="padding-bottom: 67%;"></div>
+    <div class="overlay"></div>
         <div class="container" style="padding: 6% 0; position: relative;">
             
             <h2 style="color: gray;">Foods on <a href="#" class="text-white">"<?php echo $category_title; ?>"</a></h2>

@@ -5,7 +5,7 @@
 
     <!-- CAtegories Section Starts Here -->
     <section class="categories food-search bg" style="background-image: url(images/111.png); background-attachment: fixed; ">
-    <div class="overlay" style="padding-bottom: 88%;"></div>
+    <div class="overlay"></div>
         <div class="container " style="padding: 6% 0; ">
             <h2 class="text-center" style="position: relative; color:white">Explore Foods</h2>
 

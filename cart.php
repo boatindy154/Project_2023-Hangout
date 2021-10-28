@@ -63,7 +63,7 @@
     <title>Shopping Cart</title>
 </head>
 <section class="food-search" style="background-image: url(images/111.png); background-attachment: fixed; ">
-<div class="overlay" style="padding-bottom: 51%;"></div>
+<div class="overlay" ></div>
     <div class="container " style="padding: 6% 0;">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12">

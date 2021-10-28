@@ -15,7 +15,7 @@
 <body >
     <!-- CAtegories Section Starts Here -->
     <section class="categories food-search bg"  style="background-image: url(images/111.png); background-attachment: fixed;">
-    <div class="overlay" style="padding-bottom: 55%;"></div>
+    <div class="overlay"></div>
         <div class="container" style="padding: 6% 0; position: relative;">
             <h2 class="text-center text-white">Payment</h2>
 
