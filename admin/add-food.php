@@ -1,8 +1,21 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+    a{
+        color: white;
+        
+    }
+    a:hover {
+    color: #ff7b00;
+    text-decoration: none;
+}
+</style>
+<section class="bg food-search" style="background-image: url(../images/111.png); background-attachment: fixed;">
+<div class="overlay" ></div>
+<div class="main-content" style="position: relative;">
     <div class="wrapper">
-        <h1>Add Food</h1>
+        <h1 class="text-white">Add Food</h1>
 
         <br><br>
 
@@ -14,7 +27,7 @@
             }
         ?>
 
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data" style="display: table; background-color: lavenderblush;  padding: 2%">
         
             <table class="tbl-30">
 
@@ -168,10 +181,10 @@
                         // Image is SElected
                         //A. REnamge the Image
                         //Get the extension of selected image (jpg, png, gif, etc.) "vijay-thapa.jpg" vijay-thapa jpg
-                        $ext = end(explode('.', $image_name));
+                        $ext = explode('.', $image_name);
 
                         // Create New Name for Image
-                        $image_name = "Food-Name-".rand(0000,9999).".".$ext; //New Image Name May Be "Food-Name-657.jpg"
+                        // $image_name = "Food-Name-".rand(0000,9999).".".$ext; //New Image Name May Be "Food-Name-657.jpg"
 
                         //B. Upload the Image
                         //Get the Src Path and DEstinaton path
@@ -226,9 +239,11 @@
                 if($res2 == true)
                 {
                     //Data inserted Successfullly
-                    $_SESSION['add'] = "<div class='success'>Food Added Successfully.</div>";
-                    header('location:'.SITEURL.'admin/manage-food.php');
-                }
+                    $_SESSION['add'] = "<div class='success'>Food Added Successfully.</div>";?>
+                    <script type="text/javascript">
+	                window.location="manage-food.php";
+                    </script>
+               <?php }
                 else
                 {
                     //FAiled to Insert Data
@@ -238,11 +253,12 @@
 
                 
             }
-
-        ?>
+?>
+        
 
 
     </div>
 </div>
-
+</section>
+<br>
 <?php include('partials/footer.php'); ?>

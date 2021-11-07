@@ -1,5 +1,5 @@
 <?php 
-include ('config/constants.php');
+include ('config/constantss.php');
 
 ?>
 <!DOCTYPE html>
@@ -11,43 +11,98 @@ include ('config/constants.php');
     <title>Restaurant Website</title>
 
     <!-- Link our CSS file -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" >
+    
 </head>
+<style>
+    .menu .icon {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .menu a:not(:first-child) {display: none;}
+  .menu a.icon {
+    float: right;
+    display: block;
+  }
+}
 
+@media screen and (max-width: 768px) {
+  .menu.responsive {position: relative;
+  background: #000000 !important;
+    position: relative;
+    top: 0;
+    /* padding: 10px 10px; */
+    margin-top: 3%;
+    display: block;
+  }
+  .menu.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .menu.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    
+    
+  }
+}
+</style>
 <body>
     <!-- Navbar Section Starts Here -->
-    <section class="">
+    <section class=" navv ftco-navbar-light" >
         <div class="container">
-            <div class="logo">
+            <!-- <div class="logo">
                 <a href="index.php" title="Logo">
-                    <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive">
+                    <img src="images/logo_transparent1.png" alt="Restaurant Logo" class="img-responsive">
                 </a>
-            </div>
+            </div> -->
 
-            <div class="menu text-right">
-                <ul>
-                    <li>
+            <div class="menu" id="myTopnav" style="overflow: hidden;  ">
+            
+                <a class="" href="index.php" title="Logo">
+                    <img style="" src="images/logo_transparent11.jpg" alt="Restaurant Logo" class="logo img-responsive">
+                </a>
+              
+                    
                         <a href="index.php">Home</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo SITEURL; ?>">Music</a>
-                    </li>
-                    <li>
+                   
+                   
+                        <a href="music.php">Music</a>
+                    
+                    
                         <a href="categories.php">Categories</a>
-                    </li>
-                    <li>
+                    
                         <a href="foods.php">Foods</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                    <li>
+                    
+                        <a href="match.php">Table</a>
+                    
+                        <a href="list_order.php">Order</a>
+                   
+                        <a href="paymenttest.php">Payment</a>
+                  
                         <a href="logout.php">Logout</a>
-                    </li>
-                </ul>
+                    
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                    </a>
+                
             </div>
 
             <div class="clearfix"></div>
         </div>
     </section>
     <!-- Navbar Section Ends Here -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "menu") {
+    x.className += " responsive";
+  } else {
+    x.className = "menu";
+  }
+}
+</script>

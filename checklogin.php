@@ -21,6 +21,8 @@ session_start();
                       $_SESSION["id"] = $row["id"];
                       $_SESSION["full_name"] = $row["full_name"];
                       $_SESSION["userlevel"] = $row["userlevel"];
+                      $_SESSION["email"] = $row["email"];
+                      $_SESSION["phone"] = $row["phone"];
 
                       if($_SESSION["userlevel"]=="A"){ //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php
 
@@ -31,7 +33,7 @@ session_start();
 
                       if ($_SESSION["userlevel"]=="M"){  //ถ้าเป็น member ให้กระโดดไปหน้า user_page.php
 
-                        Header("Location: index.php");
+                        Header("Location: table.php");
 
                       }
 

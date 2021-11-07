@@ -1,8 +1,21 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+    a{
+        color: white;
+        
+    }
+    a:hover {
+    color: #ff7b00;
+    text-decoration: none;
+}
+</style>
+<section class="bg food-search" style="background-image: url(../images/111.png); background-attachment: fixed;">
+<div class="overlay" ></div>
+<div class="main-content" style="position: relative;">
     <div class="wrapper">
-        <h1>Update Category</h1>
+        <h1 class="text-white">Update Category</h1>
 
         <br><br>
 
@@ -49,7 +62,7 @@
         
         ?>
 
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data" style="display: table; background-color: lavenderblush; padding: 2%">
 
             <table class="tbl-30">
                 <tr>
@@ -232,5 +245,6 @@
 
     </div>
 </div>
-
+</section>
+<br>
 <?php include('partials/footer.php'); ?>

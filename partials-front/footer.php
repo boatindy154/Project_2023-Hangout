@@ -1,5 +1,10 @@
 <!-- social Section Starts Here -->
-<section class="social">
+
+<div class="social backgroundcolor fixed-bottom" style="position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;">
         <div class="container text-center">
             <ul>
                 <li>
@@ -13,15 +18,11 @@
                 </li>
             </ul>
         </div>
-    </section>
+</div>
     <!-- social Section Ends Here -->
 
     <!-- footer Section Starts Here -->
-    <section class="footer">
-        <div class="container text-center">
-            <!-- <p>All rights reserved. Designed By <a href="#">Vijay Thapa</a></p> -->
-        </div>
-    </section>
+   
     <!-- footer Section Ends Here -->
 
 </body>

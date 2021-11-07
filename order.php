@@ -39,7 +39,16 @@
             header('location: index.php');
         }
     ?>
-
+<style>
+    a{
+        color: white;
+        
+    }
+    a:hover {
+    color: #ff7b00;
+    text-decoration: none;
+}
+</style>
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search"  #1e90ff>
         <div class="container">

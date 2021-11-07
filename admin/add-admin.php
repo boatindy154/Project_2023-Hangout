@@ -1,8 +1,21 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+    a{
+        color: white;
+        
+    }
+    a:hover {
+    color: #ff7b00;
+    text-decoration: none;
+}
+</style>
+<section class="bg food-search" style="background-image: url(../images/111.png); background-attachment: fixed;">
+<div class="overlay" style="padding-bottom: 30%;"></div>
+<div class="main-content" style="position: relative;">
     <div class="wrapper">
-        <h1>Add Admin</h1>
+        <h1 class="text-white">Add Admin</h1>
 
         <br><br>
 
@@ -14,7 +27,7 @@
             }
         ?>
 
-        <form action="" method="POST">
+        <form action="" method="POST" style="display: table; background-color: lavenderblush;  padding: 2% " >
 
             <table class="tbl-30">
                 <tr>
@@ -78,7 +91,7 @@
         ";
  
         //3. Executing Query and Saving Data into Datbase
-        $res = mysqli_query($conn, $sql) or die(mysqli_error());
+        $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
         //4. Check whether the (Query is Executed) data is inserted or not and display appropriate message
         if($res==TRUE)
@@ -88,7 +101,7 @@
             //Create a Session Variable to Display Message
             $_SESSION['add'] = "<div class='success'>Admin Added Successfully.</div>";
             //Redirect Page to Manage Admin
-            header("location:admin/manage-admin.php");
+            header("location:manage-admin.php");
         }
         else
         {
@@ -103,3 +116,5 @@
     }
     
 ?>
+<br><br><br><br><br><br><br><br>
+</section>

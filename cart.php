@@ -1,6 +1,10 @@
 <?php
      session_start();
-
+        //check login
+        if($_SESSION['full_name'] == '')
+        {
+            header("Location: login.php");
+        }
     // echo '<pre>' ;
     // print_r($_SESSION);
     // echo '</pre>';
@@ -37,7 +41,7 @@
         }
     }
 
-    #cancel cartt
+    #cancel cart
     if($act=='cancel')
     {
         unset($_SESSION['cart']);
@@ -58,21 +62,33 @@
      <link rel="stylesheet" href="css/style.css">
     <title>Shopping Cart</title>
 </head>
-<body>
-    <div class="container ">
+<style>
+    a{
+        color: white;
+        
+    }
+    a:hover {
+    color: #ff7b00;
+    text-decoration: none;
+}
+</style>
+<section class="food-search" style="background-image: url(images/111.png); background-attachment: fixed; ">
+<div class="overlay" ></div>
+    <div class="container " style="padding: 6% 0;">
         <div class="row">
-            <div class="col-12 col-sm-12 col-md-12">
-                <h3>Cart</h3>
+        <h2 style="padding-left: 15px;">Cart</h3>
+            <div class="col-12 col-sm-12 col-md-12 table-responsive">
+                
                 <form id="frmcart" name="frmcart"  method="post" action="?act=update">
-                    <table class="table table-bordered table-hover table-striped">
+                    <table class="table table-bordered table-hover table-striped" style="background-color: lavenderblush;">
                             <tr>
-                            <th width="5%" bgcolor="#EAEAEA">#</td>
-                            <th width="10%" bgcolor="#EAEAEA">img</td>
-                            <th width="55%" bgcolor="#EAEAEA">สินค้า</td>
-                            <th width="10%" align="center" bgcolor="#EAEAEA">ราคา</td>
-                            <th width="10%" align="center" bgcolor="#EAEAEA">จำนวน</td>
-                            <th width="5%" align="center" bgcolor="#EAEAEA">รวม</td>
-                            <th width="5%" align="center" bgcolor="#EAEAEA">ลบ</td>
+                            <th width="5%" bgcolor="">#</td>
+                            <th width="10%" bgcolor="">img</td>
+                            <th width="55%" bgcolor="">สินค้า</td>
+                            <th width="10%" align="center" bgcolor="">ราคา</td>
+                            <th width="10%" align="center" bgcolor="">จำนวน</td>
+                            <th width="5%" align="center" bgcolor="">รวม</td>
+                            <th width="5%" align="center" bgcolor="">ลบ</td>
                         </tr>
 
                         
@@ -80,9 +96,9 @@
                     $total=0;
                     if(!empty($_SESSION['cart']))
                     {
-                        foreach($_SESSION['cart'] as $id=>$qty)
+                        foreach($_SESSION['cart'] as $p_id=>$qty)
                         {
-                            $sql = "SELECT * FROM tbl_food WHERE id=$id";
+                            $sql = "SELECT * FROM tbl_food WHERE p_id=$p_id";
                             $query = mysqli_query($conn, $sql);
                             $row = mysqli_fetch_array($query);
                             $sum = $row['price'] * $qty;
@@ -101,9 +117,9 @@
                         }
                         
                         echo "<tr>";
-                            echo "<td colspan='5' bgcolor='#CEE7FF' align='center'><b>ราคารวม</b></td>";
-                            echo "<td align='right' bgcolor='#CEE7FF'>"."<b>".number_format($total,2)."</b>"."</td>";
-                            echo "<td align='left' bgcolor='#CEE7FF'></td>";
+                            echo "<td colspan='5' bgcolor='' align='center'><b>ราคารวม</b></td>";
+                            echo "<td align='right' bgcolor=''>"."<b>".number_format($total,2)."</b>"."</td>";
+                            echo "<td align='left' bgcolor=''></td>";
                         echo "</tr>";
                     }
                     
@@ -113,14 +129,14 @@
                         <tr>
                             <td></td>
                             <td></td>
-                            <td class=text-center><a href="index.php">กลับหน้ารายการสินค้า</a></td>
+                            <td class=text-center><a href="update-ordertest.php" style="color: black;">กลับหน้ารายการสินค้า</a></td>
                             <td colspan="6" align="right">
                                 <input type="button" class="btn btn-primary" name="btncancel" value="ยกเลิกการสั่ง" onclick="window.
                                     location='cart.php?act=cancel';"/>
 
                                 <input type="submit" class="btn btn-warning" name="button" id="button" value="ปรับปรุง" />
                                 <input type="button" class="btn btn-success" name="Submit2" value="สั่ง" onclick="window.
-                                location='order.php';"/>
+                                location='confirm.php';"/>
                             </td>
                         </tr>
                     <?php }else{
@@ -131,5 +147,7 @@
     </div>
         </div>
             </div>
-</body>
+            <br><br><br><br>
+</section>
 </html>
+<?php include('partials-front/footer.php'); ?>

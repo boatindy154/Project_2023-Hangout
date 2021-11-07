@@ -14,7 +14,7 @@
       letter-spacing: -1px;
   }
   a {
-    color: #5469d4;
+    color: white;
     text-decoration: unset;
   }
   .login-root {
@@ -109,7 +109,7 @@
       margin: 0px auto;
       width: 100%;
       max-width: 448px;
-      background: white;
+      /* background: white; */
       border-radius: 4px;
       box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
   }
@@ -117,7 +117,7 @@
       display: block;
       font-size: 20px;
       line-height: 28px;
-      color: #1a1f36;
+      color: white;
   }
   label {
       margin-bottom: 10px;
@@ -157,7 +157,7 @@
   }
   
   input[type="submit"] {
-      background-color: rgb(84, 105, 212);
+      background-color: #fff;
       box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
                   rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
                   rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, 
@@ -165,7 +165,7 @@
                   rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
                   rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
                   rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
-      color: #fff;
+      color: rgb(84, 105, 212);
       font-weight: 600;
       cursor: pointer;
   }
@@ -232,3 +232,11 @@
       transform: translateX(0px);
     }
   } 
+
+.bglogin{
+  background-image: url(../images/bglogin.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 5% 0;
+}

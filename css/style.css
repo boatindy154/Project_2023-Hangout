@@ -10,6 +10,11 @@
     padding: 0 0;
     font-family: Arial, Helvetica, sans-serif;
 }
+.backgroundcolor{
+    background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 .container{
     width: 80%;
     margin: 0 auto;
@@ -41,15 +46,15 @@
 }
 
 a{
-    color: #ff6b81;
+    color: white;
     text-decoration: none;
 }
 a:hover{
-    color: #ff4757;
+    color: #ff7b00;
 }
 
 .btn{
-    padding: 1%;
+    
     border: none;
     font-size: 1rem;
     border-radius: 5px;
@@ -72,19 +77,20 @@ a:hover{
     color: white;
     background-color: #ff6348;
 }
-.btn-success{
+.btn-success1{
     background-color: #7bed9f;
     color: white;
     cursor: pointer;
 }
-.btn-success:hover{
+.btn-success1:hover{
     color: white;
     background-color: #2ed573;
 }
 h2{
-    color: #2f3542;
+    color: rgba(255, 255, 255, 0.9);
     font-size: 2rem;
     margin-bottom: 2%;
+    position: relative;
 }
 h3{
     font-size: 1.5rem;
@@ -95,7 +101,7 @@ h3{
 .float-text{
     position: absolute;
     bottom: 50px;
-    left: 40%;
+    left: 30%;
 }
 fieldset{
     border: 1px solid white;
@@ -117,31 +123,52 @@ fieldset{
 /* CSSS for navbar section */
 
 .logo{
-    width: 10%;
+    width: 25%;
     float: left;
 }
 .menu{
-    line-height: 60px;
+    line-height: 50px;
+    display: flex;
 }
-.menu ul{
+.menu a{
     list-style-type: none;
-}
-
-.menu ul li{
     display: inline;
     padding: 1%;
     font-weight: bold;
 }
 
+/* .menu ul li{
+    
+} */
+
 
 /* CSS for Food SEarch Section */
 
 .food-search{
-    background-image: url(../images/bg.jpg);
+    background-image: url(../images/111.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 7% 0;
+    padding: 5% 0;
+    position: relative;
+}
+.food-searchtest{
+    background-image: url(images/111.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 5% 0;
+    background-attachment: fixed;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background: #000000;
+    opacity: 0.5;
 }
 
 .food-search input[type="search"]{
@@ -167,7 +194,7 @@ fieldset{
 
 /* CSS for Food Menu */
 .food-menu{
-    background-color: #ececec;
+    /* background-color: #ececec; */
     padding: 4% 0;
 }
 .food-menu-box{
@@ -230,14 +257,34 @@ fieldset{
 /*table style*/
 
 /* CSS for Mobile Size or Smaller Screen */
-
+@media only screen and (max-width:991.98px){
+    .ftco-navbar-light {
+        background: #000000 !important;
+        position: relative;
+        top: 0;
+        padding: 10px 15px;
+    }
+}
 @media only screen and (max-width:768px){
     .logo{
-        width: 80%;
+        width: 30%;
         float: none;
         margin: 1% auto;
     }
 
+ /* .bg{
+    background-attachment: fixed;
+background-image: url(../images/background.png);
+background-size: cover;
+background-repeat: no-repeat;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+content: "";
+opacity: 0.9;
+
+}  */
     .menu ul{
         text-align: center;
     }
@@ -254,11 +301,11 @@ fieldset{
     }
 
     .food-search{
-        padding: 10% 0;
+        padding: 55% 0;
     }
 
     .categories{
-        padding: 20% 0;
+        /* padding: 55% 0; */
     }
     h2{
         margin-bottom: 10%;
@@ -285,3 +332,47 @@ fieldset{
     }
 }
 
+/* wooden-table-with-blur-background-coffee-shop_1421-3284 1 */
+
+/* .bg{
+
+background-image: url(../images/bg_4.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+content: "";
+
+
+
+} */
+
+.navv{
+    
+    position: absolute;
+    /* top: 35px; */
+    left: 0;
+    right: 0;
+    z-index: 3;
+    padding: 0 0;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background: #000000;
+    opacity: 0.7;
+}
+
+.efe{
+    /* card1 */
+background: linear-gradient(180deg, rgba(57, 57, 57, 0.9) 0%, rgba(57, 57, 57, 0) 100%);
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+border-radius: 15px;
+
+}

@@ -1,10 +1,10 @@
     <?php include('partials-front/menu.php'); 
      session_start();
-    //  echo '<pre>';
-    //  print_r($_SESSION);
-    //  echo '</pre>';
+    //   echo '<pre>';
+    //   print_r($_SESSION);
+    //   echo '</pre>';
      include('config/constantss.php'); 
-     $id = $_SESSION['id'];
+     $m_id = $_SESSION['id'];
      $full_name = $_SESSION['full_name'];
      $userlevel = $_SESSION['userlevel'];
      
@@ -12,18 +12,18 @@
          Header("Location: form_login.php");
      }
     ?>
-
+    <!-- <meta http-equiv="refresh" content="3" >  -->
     <!-- fOOD sEARCH Section Starts Here -->
-    <section class="food-search text-center">
-        <div class="container">
-            
-            <form action="<?php echo SITEURL; ?>food-search.php" method="POST">
+    <section class="food-search text-center " style="background-image: url(images/111.png); background-attachment: fixed; "  >
+     <div class="overlay"></div>
+        <div class="container" style="padding: 6% 0; position: relative;">
+            <form action="food-search.php" method="POST">
                 <input type="search" name="search" placeholder="Search for Food.." required>
                 <input type="submit" name="submit" value="Search" class="btn btn-primary">
             </form>
 
         </div>
-    </section>
+    
     <!-- fOOD sEARCH Section Ends Here -->
 
     <?php 
@@ -35,9 +35,9 @@
     ?>
 
     <!-- CAtegories Section Starts Here -->
-    <section class="categories">
-        <div class="container">
-            <h2 class="text-center">Explore Foods</h2>
+    
+        <div class="container categories ">
+            <span style="color: black;"><h2 class="text-center " style="position: relative; color:white">Explore Foods</h2></span>
 
             <?php 
                 //Create SQL Query to Display CAtegories from Database
@@ -94,21 +94,21 @@
 
             <div class="clearfix"></div>
         </div>
-    </section>
+    
     <!-- Categories Section Ends Here -->
 
 
 
     <!-- fOOD MEnu Section Starts Here -->
-    <section class="food-menu">
-        <div class="container">
-            <h2 class="text-center">Food Menu</h2>
+        
+        <div class="food-menu container" style="position: relative;">
+            <h2 class="text-center" style="position: relative; color:white">Food Menu</h2>
 
             <?php 
             
             //Getting Foods from Database that are active and featured
             //SQL Query
-            $sql2 = "SELECT * FROM tbl_food WHERE active='Yes' AND featured='Yes' LIMIT 6";
+            $sql2 = "SELECT * FROM tbl_food WHERE active='Yes' AND featured='Yes' LIMIT 3";
 
             //Execute the Query
             $res2 = mysqli_query($conn, $sql2);
@@ -157,7 +157,7 @@
                                 <?php echo $row['description']; ?>
                             </p>
                             <br>
-                            <a href="cart.php?id=<?php echo $row['id']; ?>&act=add" class="btn btn-primary">Order Now</a>
+                            <a href="cart.php?id=<?php echo $row['p_id']; ?>&act=add" class="btn btn-primary">Order Now</a>
                         </div>
                     </div>
 
@@ -177,14 +177,14 @@
  
 
             <div class="clearfix"></div>
-
-            
+ิ<br>
+            <p class="text-center" style="position: relative;">
+            <a href="foods.php">See All Foods</a>
+        </p>
 
         </div>
 
-        <p class="text-center">
-            <a href="#">See All Foods</a>
-        </p>
+        
     </section>
     <!-- fOOD Menu Section Ends Here -->
 

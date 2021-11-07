@@ -4,9 +4,10 @@
 
 
     <!-- CAtegories Section Starts Here -->
-    <section class="categories">
-        <div class="container">
-            <h2 class="text-center">Explore Foods</h2>
+    <section class="categories food-search bg" style="background-image: url(images/111.png); background-attachment: fixed; ">
+    <div class="overlay"></div>
+        <div class="container " style="padding: 6% 0; ">
+            <h2 class="text-center" style="position: relative; color:white">Explore Foods</h2>
 
             <?php 
 
@@ -32,7 +33,7 @@
                         $image_name = $row['image_name'];
                         ?>
                         
-                        <a href="<?php echo SITEURL; ?>category-foods.php?category_id=<?php echo $id; ?>">
+                        <a href="category-foods.php?category_id=<?php echo $id; ?>">
                             <div class="box-3 float-container">
                                 <?php 
                                     if($image_name=="")
@@ -44,7 +45,7 @@
                                     {
                                         //Image Available
                                         ?>
-                                        <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" alt="Pizza" class="img-responsive img-curve">
+                                        <img src="images/category/<?php echo $image_name; ?>" alt="Pizza" class="img-responsive img-curve">
                                         <?php
                                     }
                                 ?>

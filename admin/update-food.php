@@ -1,5 +1,18 @@
 <?php include('partials/menu.php'); ?>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+    a{
+        color: white;
+        
+    }
+    a:hover {
+    color: #ff7b00;
+    text-decoration: none;
+}
+</style>
+<section class="bg food-search" style="background-image: url(../images/111.png); background-attachment: fixed;">
+<div class="overlay" ></div>
 <?php 
     //CHeck whether id is set or not 
     if(isset($_GET['id']))
@@ -8,7 +21,7 @@
         $id = $_GET['id'];
 
         //SQL Query to Get the Selected Food
-        $sql2 = "SELECT * FROM tbl_food WHERE id=$id";
+        $sql2 = "SELECT * FROM tbl_food WHERE p_id=$id";
         //execute the Query
         $res2 = mysqli_query($conn, $sql2);
 
@@ -33,12 +46,12 @@
 ?>
 
 
-<div class="main-content">
+<div class="main-content" style="position: relative;">
     <div class="wrapper">
-        <h1>Update Food</h1>
+        <h1 class="text-white">Update Food</h1>
         <br><br>
 
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data" style="display: table; background-color: lavenderblush; padding: 2%">
         
         <table class="tbl-30">
 
@@ -149,7 +162,7 @@
             <tr>
                 <td>
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
-                    <input type="hidden" name="current_image" value="<?php echo $current_image; ?>">
+                    
 
                     <input type="submit" name="submit" value="Update Food" class="btn-secondary">
                 </td>
@@ -170,7 +183,7 @@
                 $title = $_POST['title'];
                 $description = $_POST['description'];
                 $price = $_POST['price'];
-                $current_image = $_POST['current_image'];
+                // $current_image = $_POST['current_image'];
                 $category = $_POST['category'];
 
                 $featured = $_POST['featured'];
@@ -191,9 +204,9 @@
                         //A. Uploading New Image
 
                         //REname the Image
-                        $ext = end(explode('.', $image_name)); //Gets the extension of the image
+                        $ext = explode('.', $image_name); //Gets the extension of the image
 
-                        $image_name = "Food-Name-".rand(0000, 9999).'.'.$ext; //THis will be renamed image
+                        // $image_name = "Food-Name-".rand(0000, 9999).'.'.$ext; //THis will be renamed image
 
                         //Get the Source Path and DEstination PAth
                         $src_path = $_FILES['image']['tmp_name']; //Source Path
@@ -218,20 +231,20 @@
                         {
                             //Current Image is Available
                             //REmove the image
-                            $remove_path = "../images/food/".$current_image;
+                            $remove_path = $current_image;
 
-                            $remove = unlink($remove_path);
+                            // $remove = unlink($remove_path);
 
                             //Check whether the image is removed or not
-                            if($remove==false)
-                            {
-                                //failed to remove current image
-                                $_SESSION['remove-failed'] = "<div class='error'>Faile to remove current image.</div>";
-                                //redirect to manage food
-                                header('location:'.SITEURL.'admin/manage-food.php');
-                                //stop the process
-                                die();
-                            }
+                            // if($remove==false)
+                            // {
+                            //     //failed to remove current image
+                            //     $_SESSION['remove-failed'] = "<div class='error'>Faile to remove current image.</div>";
+                            //     //redirect to manage food
+                            //     header('location:'.SITEURL.'admin/manage-food.php');
+                            //     //stop the process
+                            //     die();
+                            // }
                         }
                     }
                     else
@@ -255,19 +268,22 @@
                     category_id = '$category',
                     featured = '$featured',
                     active = '$active'
-                    WHERE id=$id
+                    WHERE p_id=$id
                 ";
 
                 //Execute the SQL Query
                 $res3 = mysqli_query($conn, $sql3);
-
+                ?>
                 //CHeck whether the query is executed or not 
-                if($res3==true)
-                {
+                <?php if($res3==true)
+                { 
                     //Query Exectued and Food Updated
-                    $_SESSION['update'] = "<div class='success'>Food Updated Successfully.</div>";
-                    header('location:'.SITEURL.'admin/manage-food.php');
-                }
+                    $_SESSION['update'] = "<div class='success'>Food Updated Successfully.</div>";?>
+                    <script type="text/javascript">
+	                window.location="manage-food.php";
+                    </script>
+                    <!-- // header('location:'.SITEURL.'admin/manage-food.php'); -->
+               <?php }
                 else
                 {
                     //Failed to Update Food
@@ -276,11 +292,12 @@
                 }
 
                 
-            }
+            }?>
         
-        ?>
+        
 
     </div>
 </div>
-
+</section>
+<br>
 <?php include('partials/footer.php'); ?>

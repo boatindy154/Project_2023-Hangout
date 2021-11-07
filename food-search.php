@@ -2,7 +2,8 @@
     <?php include('partials-front/menu.php'); ?>
 
     <!-- fOOD sEARCH Section Starts Here -->
-    <section class="food-search text-center">
+    <section class="food-search text-center " style="background-image: url(images/111.png); background-attachment: fixed;">
+    <div class="overlay"></div>
         <div class="container">
             <?php 
 
@@ -13,17 +14,17 @@
             ?>
 
 
-            <h2>Foods on Your Search <a href="#" class="text-white">"<?php echo $search; ?>"</a></h2>
+            <h2 style="padding-top: 7%;">Foods on Your Search <a href="#" class="text-white">"<?php echo $search; ?>"</a></h2>
 
         </div>
-    </section>
+    
     <!-- fOOD sEARCH Section Ends Here -->
 
 
 
     <!-- fOOD MEnu Section Starts Here -->
-    <section class="food-menu">
-        <div class="container">
+    <section class="food-menu" style="position: relative;">
+        <div class="container" style="padding: 6% 0;">
             <h2 class="text-center">Food Menu</h2>
 
             <?php 
@@ -46,7 +47,7 @@
                     while($row=mysqli_fetch_assoc($res))
                     {
                         //Get the details
-                        $id = $row['id'];
+                        $id = $row['p_id'];
                         $title = $row['title'];
                         $price = $row['price'];
                         $description = $row['description'];
@@ -66,7 +67,7 @@
                                     {
                                         //Image Available
                                         ?>
-                                        <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                                        <img src="images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
                                         <?php 
 
                                     }

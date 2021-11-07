@@ -1,12 +1,18 @@
 
-<?php include('partials/menu.php'); ?>
+<?php include('partials/menu.php'); 
+session_start();
+// $userlevel = $_SESSION['userlevel'];
+?>
 
         <!-- Main Content Section Starts -->
-        <div class="main-content">
-            <div class="wrapper">
-                <h1>Dashboard</h1>
+        <section class=" food-search " style="background-image: url(../images/111.png); background-attachment: fixed; ">
+        <div class="overlay "></div>
+        <div class="main-content1 container " style="position: relative;">
+            <div class="">
+                <h1 class="text-white">Dashboard</h1>
                 <br><br>
                 <?php 
+                
                     if(isset($_SESSION['login']))
                     {
                         echo $_SESSION['login'];
@@ -51,7 +57,7 @@
                     
                     <?php 
                         //Sql Query 
-                        $sql3 = "SELECT * FROM tbl_order";
+                        $sql3 = "SELECT * FROM order_head";
                         //Execute Query
                         $res3 = mysqli_query($conn, $sql3);
                         //Count Rows
@@ -68,7 +74,7 @@
                     <?php 
                         //Creat SQL Query to Get Total Revenue Generated
                         //Aggregate Function in SQL
-                        $sql4 = "SELECT SUM(total) AS Total FROM tbl_order WHERE status='Delivered'";
+                        $sql4 = "SELECT SUM(total) AS Total FROM order_head";
 
                         //Execute the Query
                         $res4 = mysqli_query($conn, $sql4);
@@ -91,5 +97,6 @@
             </div>
         </div>
         <!-- Main Content Setion Ends -->
+        </section>
 
 <?php include('partials/footer.php') ?>
