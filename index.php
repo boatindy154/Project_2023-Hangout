@@ -12,7 +12,7 @@
          Header("Location: form_login.php");
      }
     ?>
-
+    <!-- <meta http-equiv="refresh" content="3" >  -->
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center " style="background-image: url(images/111.png); background-attachment: fixed; "  >
      <div class="overlay"></div>
@@ -177,14 +177,14 @@
  
 
             <div class="clearfix"></div>
-
-            
+ิ<br>
+            <p class="text-center" style="position: relative;">
+            <a href="foods.php">See All Foods</a>
+        </p>
 
         </div>
 
-        <p class="text-center" style="position: relative;">
-            <a href="foods.php">See All Foods</a>
-        </p>
+        
     </section>
     <!-- fOOD Menu Section Ends Here -->
 

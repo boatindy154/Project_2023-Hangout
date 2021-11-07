@@ -19,13 +19,23 @@ $rsorder = mysqli_query($conn, $queryorder);
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
+<style>
+    a{
+        color: white;
+        
+    }
+    a:hover {
+    color: #ff7b00;
+    text-decoration: none;
+}
+</style>
 <section class="food-search" style="background-image: url(images/111.png); background-attachment: fixed;">
 <div class="overlay" ></div>
     <div class="container " style="padding: 6% 0;">
         <div class="row">
-            <div class="col-12 col-sm-12 col-md-12">
-                <h2 style="color: white;">Order List</h3>
+        <h2 style="color: white; padding-left: 15px;">Order List</h3>
+            <div class="col-12 col-sm-12 col-md-12 table-responsive">
+                
                     <form id="frmcart" name="frmcart" method="post" action="?act=update">
                         <table class="table table-bordered table-hover table-striped" style="background-color: lavenderblush;">
                             <thead>

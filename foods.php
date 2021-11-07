@@ -7,7 +7,7 @@
     <div class="overlay" ></div>
         <div class="container" style="padding: 6% 0; position: relative; ">
             
-            <form action="<?php echo SITEURL; ?>food-search.php" method="POST">
+            <form action="food-search.php" method="POST">
                 <input type="search" name="search" placeholder="Search for Food.." required>
                 <input type="submit" name="submit" value="Search" class="btn btn-primary">
             </form>

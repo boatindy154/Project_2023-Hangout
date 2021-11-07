@@ -1,7 +1,11 @@
 <!-- Footer Section Starts -->
 
-<div class="social footer fixed-bottom" style="position: relative;">
-    <br>
+<div class="social backgroundcolor fixed-bottom" style="position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;">
+    
     
     <div class="container text-center">
             <ul>

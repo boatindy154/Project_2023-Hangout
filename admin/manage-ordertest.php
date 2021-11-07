@@ -1,8 +1,17 @@
 <?php include('partials/menu.php'); ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+<style>
+    a{
+        color: white;
+        
+    }
+    a:hover {
+    color: #ff7b00;
+    text-decoration: none;
+}
+</style>
 <section class="bg food-search" style="background-image: url(../images/111.png); background-attachment: fixed;">
-<div class="overlay" style="padding-bottom: 55%;"></div>
+<div class="overlay" ></div>
     <div class="main-content1" style="position: relative;">
         <div class="wrapper">
             <h1 class="text-white">Manage Order</h1>
@@ -13,6 +22,11 @@
             if (isset($_SESSION['update'])) {
                 echo $_SESSION['update'];
                 unset($_SESSION['update']);
+
+            if (isset($_SESSION['delete'])) {
+                    echo $_SESSION['delete'];
+                    unset($_SESSION['delete']);
+                }
             }
             ?>
             <br><br>
@@ -102,5 +116,7 @@
         </div>
 
     </div>
+    <br><br><br><br><br>
 </section>
+
 <?php include('partials/footer.php'); ?>

@@ -1,63 +1,60 @@
-
-    <?php include('partials-front/menu.php'); ?>
-
-    <!-- fOOD sEARCH Section Starts Here -->
-    <section class="food-search text-center " style="background-image: url(images/111.png); background-attachment: fixed;">
-    <div class="overlay"></div>
-        <div class="container">
-            <?php 
-
-                //Get the Search Keyword
-                // $search = $_POST['search'];
-                $search = mysqli_real_escape_string($conn, $_POST['search']);
-            
-            ?>
-
-
-            <h2 style="padding-top: 7%;">Foods on Your Search <a href="#" class="text-white">"<?php echo $search; ?>"</a></h2>
-
-        </div>
+<?php
     
+    include('partials/menu.php');  
+    ?>
+<style>
+    .btn-primary {
+    background-color: #ff6b81;
+    color: white;
+    cursor: pointer;
+}
+    .btn-primary:hover{
+    color: white;
+    background-color: #ff4757;
+
+}
+</style>
+    <!-- fOOD sEARCH Section Starts Here -->
+    <section class="food-search text-center bg" style="background-image: url(../images/111.png); background-attachment: fixed;">
+    <div class="overlay" ></div>
+        
+ 
     <!-- fOOD sEARCH Section Ends Here -->
 
 
 
     <!-- fOOD MEnu Section Starts Here -->
-    <section class="food-menu" style="position: relative;">
-        <div class="container" style="padding: 6% 0;">
-            <h2 class="text-center">Food Menu</h2>
+        <div class="container food-menu" style="position: relative; width:79%">
+            <h2 class="text-center" style="color: white;">Food Menu</h2>
 
             <?php 
-
-                //SQL Query to Get foods based on search keyword
-                //$search = burger '; DROP database name;
-                // "SELECT * FROM tbl_food WHERE title LIKE '%burger'%' OR description LIKE '%burger%'";
-                $sql = "SELECT * FROM tbl_food WHERE title LIKE '%$search%' OR description LIKE '%$search%'";
+                //Display Foods that are Active
+                $sql = "SELECT * FROM tbl_food WHERE active='Yes'";
 
                 //Execute the Query
-                $res = mysqli_query($conn, $sql);
+                $res=mysqli_query($conn, $sql);
 
                 //Count Rows
                 $count = mysqli_num_rows($res);
 
-                //Check whether food available of not
+                //CHeck whether the foods are availalable or not
                 if($count>0)
                 {
-                    //Food Available
+                    //Foods Available
                     while($row=mysqli_fetch_assoc($res))
                     {
-                        //Get the details
-                        $id = $row['p_id'];
+                        //Get the Values
+                        $p_id = $row['p_id'];
                         $title = $row['title'];
-                        $price = $row['price'];
                         $description = $row['description'];
+                        $price = $row['price'];
                         $image_name = $row['image_name'];
                         ?>
-
+                        
                         <div class="food-menu-box">
                             <div class="food-menu-img">
                                 <?php 
-                                    // Check whether image name is available or not
+                                    //CHeck whether image available or not
                                     if($image_name=="")
                                     {
                                         //Image not Available
@@ -67,9 +64,8 @@
                                     {
                                         //Image Available
                                         ?>
-                                        <img src="images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
-                                        <?php 
-
+                                        <img src="../images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                                        <?php
                                     }
                                 ?>
                                 
@@ -83,7 +79,7 @@
                                 </p>
                                 <br>
 
-                                <a href="#" class="btn btn-primary">Order Now</a>
+                                <a href="add-cart.php?id=<?php echo $row['p_id']; ?>&act=add" class="btn btn-primary">Order Now</a>
                             </div>
                         </div>
 
@@ -92,11 +88,12 @@
                 }
                 else
                 {
-                    //Food Not Available
+                    //Food not Available
                     echo "<div class='error'>Food not found.</div>";
                 }
-            
             ?>
+
+            
 
             
 
@@ -109,4 +106,4 @@
     </section>
     <!-- fOOD Menu Section Ends Here -->
 
-    <?php include('partials-front/footer.php'); ?>
+    <?php include('partials/footer.php'); ?>

@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/login.css">
 	<title>Login Page</title>
 </head>
-<body class="bglogin" style="background-attachment: fixed;">
+<body class="bglogin" >
 	<!-- Main Content -->
 	
     <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">

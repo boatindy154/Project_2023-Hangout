@@ -82,8 +82,18 @@ table tr td{
 
 
 /* CSS for Menu */
-.menu{
-    /* border-bottom: 1px solid grey; */
+.menuu{
+    line-height: 50px;
+    display: flex;
+}
+.menuu a{
+    list-style-type: none;
+    display: inline;
+    padding: 1%;
+    font-weight: bold;
+}
+/* .menu{
+    border-bottom: 1px solid grey;
 }
 .menu ul{
     list-style-type: none;
@@ -99,7 +109,7 @@ table tr td{
 }
 .menu ul li a:hover{
     color: #2f3542;
-}
+} */
 
 /* CSS for main-content */
 .main-content1{

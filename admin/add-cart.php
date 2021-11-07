@@ -1,15 +1,13 @@
 <?php
      session_start();
         //check login
-        if($_SESSION['full_name'] == '')
-        {
-            header("Location: login.php");
-        }
+        // if($_SESSION['full_name'] == '')
+
     // echo '<pre>' ;
     // print_r($_SESSION);
     // echo '</pre>';
 
-    include 'config/constantss.php';
+    include '../config/constantss.php';
     @$id = mysqli_real_escape_string($conn,$_GET['id']);
     $act = mysqli_real_escape_string($conn,$_GET['act']);
 
@@ -50,7 +48,7 @@
 
 ?>
 
-<?php include('partials-front/menu.php'); ?>
+<?php include('partials/menu.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,8 +59,7 @@
      <!-- Link our CSS file -->
      <link rel="stylesheet" href="css/style.css">
     <title>Shopping Cart</title>
-</head>
-<style>
+</head><style>
     a{
         color: white;
         
@@ -71,8 +68,27 @@
     color: #ff7b00;
     text-decoration: none;
 }
+.btn-primary {
+    background-color: #ff6b81;
+    color: white;
+    cursor: pointer;
+}
+    .btn-primary:hover{
+    color: white;
+    background-color: #ff4757;
+
+}
+.btn-warning{
+    background-color: #ff7f50;
+    color: white;
+    cursor: pointer;
+}
+.btn-warning:hover{
+    color: white;
+    background-color: #ff6348;
+}
 </style>
-<section class="food-search" style="background-image: url(images/111.png); background-attachment: fixed; ">
+<section class="food-search" style="background-image: url(../images/111.png); background-attachment: fixed; ">
 <div class="overlay" ></div>
     <div class="container " style="padding: 6% 0;">
         <div class="row">
@@ -105,7 +121,7 @@
                             $total += $sum;
                             echo "<tr>";
                             echo "<td >" . @$i +=1 . "</td>";
-                            echo "<td>"."<img src='images/food/".$row['image_name']."' width='100px'>"."</td>";
+                            echo "<td>"."<img src='../images/food/".$row['image_name']."' width='100px'>"."</td>";
                             echo "<td >" . $row["title"] . "</td>";
                             echo "<td align='right' >" .number_format($row["price"],2) . "</td>";
                                 echo "<td  align='right'>";
@@ -129,7 +145,7 @@
                         <tr>
                             <td></td>
                             <td></td>
-                            <td class=text-center><a href="update-ordertest.php" style="color: black;">กลับหน้ารายการสินค้า</a></td>
+                            <td class=text-center><a href="index.php" style="color: black;">กลับหน้ารายการสินค้า</a></td>
                             <td colspan="6" align="right">
                                 <input type="button" class="btn btn-primary" name="btncancel" value="ยกเลิกการสั่ง" onclick="window.
                                     location='cart.php?act=cancel';"/>
@@ -147,7 +163,6 @@
     </div>
         </div>
             </div>
-            <br><br><br><br>
 </section>
 </html>
-<?php include('partials-front/footer.php'); ?>
+<?php include('partials/footer.php'); ?>

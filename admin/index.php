@@ -1,13 +1,14 @@
 
 <?php include('partials/menu.php'); 
-// session_start();
+session_start();
 // $userlevel = $_SESSION['userlevel'];
 ?>
+
         <!-- Main Content Section Starts -->
-        <section class=" food-search" style="background-image: url(../images/111.png); background-attachment: fixed; ">
-        <div class="overlay" style="padding-bottom: 40%;"></div>
-        <div class="main-content1 " style="position: relative;">
-            <div class="wrapper">
+        <section class=" food-search " style="background-image: url(../images/111.png); background-attachment: fixed; ">
+        <div class="overlay "></div>
+        <div class="main-content1 container " style="position: relative;">
+            <div class="">
                 <h1 class="text-white">Dashboard</h1>
                 <br><br>
                 <?php 

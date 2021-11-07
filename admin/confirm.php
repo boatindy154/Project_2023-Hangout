@@ -1,10 +1,10 @@
 <?php
 session_start();
     //check login
-    if($_SESSION['full_name'] == '')
-    {
-        header("Location: login.php");
-    }
+    // if($_SESSION['full_name'] == '')
+    // {
+    //     header("Location: login.php");
+    // }
 // echo '<pre>';
 // print_r($_SESSION);
 // echo '</pre>';
@@ -12,7 +12,7 @@ session_start();
 $m_id = $_SESSION['id'];
 // echo $m_id;
 
-include 'config/constantss.php';
+include '../config/constantss.php';
 
 $qmember = "SELECT full_name, email, phone FROM tbl_admin WHERE id = $m_id";
 $rsmember = mysqli_query($conn , $qmember) or die ("Error in query $qmember" );
@@ -23,7 +23,7 @@ $rowmember = mysqli_fetch_array($rsmember);
 // echo '</pre>';
 
 ?>
-<?php include('partials-front/menu.php'); ?>
+<?php include('partials/menu.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,8 +45,18 @@ $rowmember = mysqli_fetch_array($rsmember);
     color: #ff7b00;
     text-decoration: none;
 }
+.btn-primary {
+    background-color: #ff6b81;
+    color: white;
+    cursor: pointer;
+}
+    .btn-primary:hover{
+    color: white;
+    background-color: #ff4757;
+
+}
 </style>
-<section class="food-search" style="background-image: url(images/111.png); background-attachment: fixed; ">
+<section class="food-search" style="background-image: url(../images/111.png); background-attachment: fixed; ">
 <div class="overlay" ></div>
   <div class="container " style="padding: 6% 0; position: relative;">
     <div class="row">
@@ -75,7 +85,7 @@ $rowmember = mysqli_fetch_array($rsmember);
                 $total += $sum;
                 echo "<tr>";
                 echo "<td >" . @$i += 1 . "</td>";
-                echo "<td>" . "<img src='images/food/" . $row['image_name'] . "' width='100px'>" . "</td>";
+                echo "<td>" . "<img src='../images/food/" . $row['image_name'] . "' width='100px'>" . "</td>";
                 echo "<td >" . $row["title"] . "</td>";
                 echo "<td align='right' >" . number_format($row["price"], 2) . "</td>";
                 echo "<td  align='right'>";
@@ -120,4 +130,4 @@ $rowmember = mysqli_fetch_array($rsmember);
   </section>
 
 </html>
-<?php include('partials-front/footer.php'); ?>
+<?php include('partials/footer.php'); ?>

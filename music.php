@@ -6,7 +6,18 @@ $rsmusic = mysqli_query($conn, $music);
 $sn = 1;
 
 ?>
+<style>@media screen and (min-width: 601px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+}
 
+@media screen and (max-width: 600px) {
+  h3 {
+    font-size: 1.3rem;
+    text-align: left;
+  }
+}</style>
 <!-- music sEARCH Section Starts Here -->
 <section class=" food-search text-center" style="background-image: url(images/111.png); background-attachment: fixed;">
     <div class="overlay" ></div>

@@ -1,4 +1,15 @@
 <?php
+  if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] ==='on' ){
+    $url="https://";
+  }else{
+    $url="http://";
+    $url.=$_SERVER['HTTP_HOST'];
+    $url.=$_SERVER['REQUEST_URI'];
+    $url;
+  }
+$page=$url;
+$sec="10";
+
 //connect database
 $condb= mysqli_connect("localhost","root","","food-order") or die("Error: " . mysqli_error($condb));
 mysqli_query($condb, "SET NAMES 'utf8' ");
@@ -11,6 +22,8 @@ $result = mysqli_query($condb, $query);
 <html lang="en">
   <head>
     <!-- Required meta tags -->
+    <meta http-equiv="refresh" content="<?php echo $sec; ?>" URL="
+      <?php echo $page; ?>">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
@@ -18,6 +31,14 @@ $result = mysqli_query($condb, $query);
     <link rel="stylesheet" href="css/style.css">
     <title>รายชื่อโต๊ะจากฐานข้อมูล </title>
     <style type="text/css">
+    a{
+        color: white;
+        
+    }
+    a:hover {
+    color: #ff7b00;
+    text-decoration: none;
+}
     .bg{
     background-color: #ffffff;
     }

@@ -54,7 +54,7 @@ a:hover{
 }
 
 .btn{
-    padding: 1%;
+    
     border: none;
     font-size: 1rem;
     border-radius: 5px;
@@ -123,21 +123,23 @@ fieldset{
 /* CSSS for navbar section */
 
 .logo{
-    width: 10%;
+    width: 25%;
     float: left;
 }
 .menu{
-    line-height: 60px;
+    line-height: 50px;
+    display: flex;
 }
-.menu ul{
+.menu a{
     list-style-type: none;
-}
-
-.menu ul li{
     display: inline;
     padding: 1%;
     font-weight: bold;
 }
+
+/* .menu ul li{
+    
+} */
 
 
 /* CSS for Food SEarch Section */
@@ -255,7 +257,14 @@ fieldset{
 /*table style*/
 
 /* CSS for Mobile Size or Smaller Screen */
-
+@media only screen and (max-width:991.98px){
+    .ftco-navbar-light {
+        background: #000000 !important;
+        position: relative;
+        top: 0;
+        padding: 10px 15px;
+    }
+}
 @media only screen and (max-width:768px){
     .logo{
         width: 30%;
@@ -341,7 +350,7 @@ content: "";
 } */
 
 .navv{
-    background: transparent !important;
+    
     position: absolute;
     /* top: 35px; */
     left: 0;

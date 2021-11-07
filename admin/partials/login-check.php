@@ -1,5 +1,5 @@
 <?php 
-// session_start();
+session_start();
     //AUthorization - Access COntrol
     //CHeck whether the user is logged in or not
     if(!isset($_SESSION['user'])) //IF user session is not set

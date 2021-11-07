@@ -1,9 +1,18 @@
 <?php include('partials/menu.php'); ?>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+<style>
+    a{
+        color: white;
+        
+    }
+    a:hover {
+    color: #ff7b00;
+    text-decoration: none;
+}
+</style>
 <section class="bg food-search" style="background-image: url(../images/111.png); background-attachment: fixed;">
-<div class="overlay" style="padding-bottom: 51%;"></div>
+<div class="overlay" ></div>
 <?php 
     //CHeck whether id is set or not 
     if(isset($_GET['id']))
@@ -290,4 +299,5 @@
     </div>
 </div>
 </section>
+<br>
 <?php include('partials/footer.php'); ?>

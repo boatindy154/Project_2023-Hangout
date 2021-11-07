@@ -1,5 +1,5 @@
 <?php include('partials/menu.php');
-// session_start();
+session_start();
 $m_id = $_SESSION['id'];
 // $full_name = $_SESSION['full_name'];
 // $userlevel = $_SESSION['userlevel'];
@@ -21,12 +21,31 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
 ?>
 <!-- Link our CSS file -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+    a{
+        color: white;
+        
+    }
+    a:hover {
+    color: #ff7b00;
+    text-decoration: none;
+}
+.btn-primary {
+    background-color: #ff6b81;
+    color: white;
+    cursor: pointer;
+}
+    .btn-primary:hover{
+    color: white;
+    background-color: #ff4757;
 
+}
+</style>
 <!-- <link rel="stylesheet" href="css/style.css"> -->
 <!-- *********************************************************** -->
 <body >
     <section class="food-search" style="background-image: url(../images/111.png); background-attachment: fixed;">
-    <div class="overlay" style="padding-bottom: 51%;"></div>
+    <div class="overlay" ></div>
 <div class="main-content1" style="position: relative;">
     <div class="wrapper">
         
@@ -86,10 +105,9 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
                     <td></td>
                     <td></td>
                     <td colspan="6" align="right">
-                    <input type="button" class="btn btn-success" name="Submit2" value="เพิ่มรายการ" onclick="window.
-                                location='admin/update-order2.php';"/>
-                    <input type="button" class="btn btn-primary" name="Submit2" value="ลบรายการ" onclick="window.
-                                location='admin/update-order2.php';"/>
+                    <a href="add-order.php?o_id=<?php echo $o_id; ?>" class="btn btn-success">เพิ่มรายการ</a>
+                    <a href="delete-order.php?o_id=<?php echo $o_id; ?>" class="btn btn-primary">ลบ Order</a>
+                    
                     </td>
                 </tr>
 
