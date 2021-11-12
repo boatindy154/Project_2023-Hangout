@@ -1,6 +1,10 @@
 <?php include('partials-front/menu.php');
 session_start();
-
+$userlevel = $_SESSION['userlevel'];
+     
+if($userlevel!='M'){
+    Header("Location: form_login.php");
+}
 $music = "SELECT * FROM tbl_music ";
 $rsmusic = mysqli_query($conn, $music);
 $sn = 1;
@@ -14,7 +18,7 @@ $sn = 1;
 
 @media screen and (max-width: 600px) {
   h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     text-align: left;
   }
 }</style>
@@ -29,9 +33,7 @@ $sn = 1;
         </form>
     </div>
     <!-- music sEARCH Section Ends Here -->
-    <div class="container food-menu" style="position: relative; background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(47, 26, 2, 0.8) 100%);
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 20px; height: 400px;">
+    <div class="container food-menu" style="position: relative; padding: 1% ">
         <h2 class="text-center text-white">Music</h2>
         <?php 
             if(isset($_SESSION['add'])) //Checking whether the SEssion is Set of Not
@@ -54,6 +56,8 @@ border-radius: 20px; height: 400px;">
 
     </div>
     <div class="clearfix"></div>
+    <br><br><br><br>
+
 </section>
 <?php 
     //Process the Value from Form and Save it in Database

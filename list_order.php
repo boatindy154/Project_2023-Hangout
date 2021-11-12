@@ -3,6 +3,11 @@ session_start();
 // echo '<pre>';
 // print_r($_SESSION);
 // echo '</pre>';
+$userlevel = $_SESSION['userlevel'];
+     
+     if($userlevel!='M'){
+         Header("Location: form_login.php");
+     }
 $m_id = $_SESSION['id'];
 $queryorder = "SELECT * FROM order_head WHERE m_id=$m_id";
 $rsorder = mysqli_query($conn, $queryorder);

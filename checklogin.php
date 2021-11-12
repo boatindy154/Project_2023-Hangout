@@ -23,6 +23,7 @@ session_start();
                       $_SESSION["userlevel"] = $row["userlevel"];
                       $_SESSION["email"] = $row["email"];
                       $_SESSION["phone"] = $row["phone"];
+                      $_SESSION["table_number"] = $row["table_number"];
 
                       if($_SESSION["userlevel"]=="A"){ //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php
 

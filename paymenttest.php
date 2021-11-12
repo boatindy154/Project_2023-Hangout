@@ -1,4 +1,10 @@
-<?php include('partials-front/menu.php'); ?>
+<?php include('partials-front/menu.php'); 
+session_start();
+$userlevel = $_SESSION['userlevel'];
+     
+if($userlevel!='M'){
+    Header("Location: form_login.php");
+}?>
 <!DOCTYPE html>
 <html lang="en">
 

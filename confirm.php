@@ -111,7 +111,7 @@ $rowmember = mysqli_fetch_array($rsmember);
             </div>
             <input type="hidden" name="m_id" value="<?php echo $m_id; ?>">
             <input type="hidden" name="total" value="<?php echo $total; ?>">
-            <button type="submit" class="btn btn-primary">ยืนยันการสั่ง</button>
+            <button  type="submit" class="btn btn-primary">ยืนยันการสั่ง</button>
           
         </form>
       </div>

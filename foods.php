@@ -1,6 +1,11 @@
     <?php
     session_start();
-    include('partials-front/menu.php'); ?>
+    include('partials-front/menu.php'); 
+    $userlevel = $_SESSION['userlevel'];
+     
+     if($userlevel!='M'){
+         Header("Location: form_login.php");
+     }?>
 
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center bg" style="background-image: url(images/111.png); background-attachment: fixed;">

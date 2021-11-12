@@ -54,7 +54,7 @@ a:hover{
 }
 
 .btn{
-    
+    padding: 1%;
     border: none;
     font-size: 1rem;
     border-radius: 5px;
