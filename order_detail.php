@@ -44,8 +44,19 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
             <h4 class="text-white">
                 OrderID : <?php echo $rowdetail['o_id']; ?><br>
                 วัน/เวลา : <?php echo $rowdetail['dttm']; ?><br>
+                Status : <?php if ($rowdetail['status'] == "1") {
+                                    echo "<font color = 'blue'>";
+                                    echo 'กำลังทำอาหาร';
+                                } elseif ($rowdetail['status'] == "2") {
+                                    echo "<font color = '#3cb329'>";
+                                    echo 'เรียกชำระเงิน';
+                                } elseif ($rowdetail['status'] == "3") {
+                                    echo "<font color = 'red'>";
+                                    echo 'ชำระเงินแล้ว';
+                                }
+                                ?> 
             </h4>
-            <table class="table table-bordered table-hover table-striped" style="background-color: lavenderblush;">
+            <table class="table table-bordered table-hover table-striped" style="background-color: lavenderblush; color:black">
                 <tr>
                     <th width="5%" bgcolor="">#</td>
                     <th width="10%" bgcolor="">img</td>
@@ -67,7 +78,7 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
                     echo "<td>" . "<img src='images/food/" . $row['image_name'] . "' width='100px'>" . "</td>";
                     echo "<td >" . $row["title"] . "</td>";
                     echo "<td align='right' >" . number_format($row["price"], 2) . "</td>";
-                    echo "<td align='right' >" . number_format($row["d_qty"], 2) . "</td>";
+                    echo "<td align='right' >" . number_format($row["d_qty"], ) . "</td>";
                     echo "<td align='right' >" . number_format($row["d_subtotal"], 2) . "</td>";
                     echo "</tr>";
                 } //closeforeach

@@ -6,8 +6,19 @@ $userlevel = $_SESSION['userlevel'];
 if($userlevel!='M'){
     Header("Location: form_login.php");
 } ?>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 
+<style>
+    a {
+      color: white;
 
+    }
+        a:hover {
+      color: #ff7b00;
+      text-decoration: none;
+    }
+</style>
 
     <!-- CAtegories Section Starts Here -->
     <section class="categories food-search bg" style="background-image: url(images/111.png); background-attachment: fixed; ">
@@ -40,7 +51,7 @@ if($userlevel!='M'){
                         ?>
                         
                         <a href="category-foods.php?category_id=<?php echo $id; ?>">
-                            <div class="box-3 float-container">
+                            <div class="box-3 float-container text-center">
                                 <?php 
                                     if($image_name=="")
                                     {

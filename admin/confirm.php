@@ -9,12 +9,12 @@ session_start();
 // print_r($_SESSION);
 // echo '</pre>';
 
-$m_id = $_SESSION['id'];
+$m_id = $_SESSION['m_id'];
 // echo $m_id;
 
 include '../config/constantss.php';
 
-$qmember = "SELECT full_name, email, phone FROM tbl_admin WHERE id = $m_id";
+$qmember = "SELECT full_name, email, table_number FROM tbl_admin WHERE id = $m_id";
 $rsmember = mysqli_query($conn , $qmember) or die ("Error in query $qmember" );
 $rowmember = mysqli_fetch_array($rsmember);
 
@@ -114,9 +114,9 @@ $rowmember = mysqli_fetch_array($rsmember);
 
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputEmail4" class="text-white">เบอร์โทร</label>
-                <input type="text" class="form-control" id="inputEmail4" name="phone"
-                name="full_name" value="<?php echo $rowmember['phone'];?>">
+                <label for="inputEmail4" class="text-white">โต๊ะ</label>
+                <input type="text" class="form-control" id="inputEmail4" name="table_number"
+                name="full_name" value="<?php echo $rowmember['table_number'];?>">
               </div>
             </div>
             <input type="hidden" name="m_id" value="<?php echo $m_id; ?>">

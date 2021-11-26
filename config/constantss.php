@@ -13,5 +13,5 @@
     $conn = mysqli_connect('localhost', 'root', '','food-order') or die(mysqli_error($conn)); //Database Connection
     $db_select = mysqli_select_db($conn, 'food-order') or die(mysqli_error($conn)); //SElecting Database
 
-
+mysqli_set_charset($conn,"utf8");
 ?>

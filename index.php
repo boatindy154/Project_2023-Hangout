@@ -1,4 +1,5 @@
-    <?php include('partials-front/menu.php'); 
+    <?php 
+    include('partials-front/menu.php'); 
      session_start();
     //   echo '<pre>';
     //   print_r($_SESSION);
@@ -7,13 +8,52 @@
      $m_id = $_SESSION['id'];
      $full_name = $_SESSION['full_name'];
      $userlevel = $_SESSION['userlevel'];
-     
+     $table_number = $_SESSION['table_number'];
      if($userlevel!='M'){
          Header("Location: form_login.php");
      }
     ?>
     <!-- <meta http-equiv="refresh" content="3" >  -->
     <!-- fOOD sEARCH Section Starts Here -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .btn {
+    padding: 1%;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+        .btn-primary {
+    background-color: #ff6b81;
+    color: white;
+    cursor: pointer;
+    vertical-align: top;
+}
+.btn-primary:hover{
+    color: white;
+    background-color: #ff4757;
+
+}
+.food-menu-box {
+    width: 48%;
+    margin: 1%;
+    padding: 2%;
+    float: left;
+    background-color: white;
+    border-radius: 15px;
+}
+a {
+      color: white;
+
+    }
+a:hover {
+      color: #ff7b00;
+      text-decoration: none;
+    }
+    </style>
     <section class="food-search text-center " style="background-image: url(images/111.png); background-attachment: fixed; "  >
      <div class="overlay"></div>
         <div class="container" style="padding: 6% 0; position: relative;">
@@ -156,7 +196,6 @@
                             <p class="food-detail">
                                 <?php echo $row['description']; ?>
                             </p>
-                            <br>
                             <a href="cart.php?id=<?php echo $row['p_id']; ?>&act=add" class="btn btn-primary">Order Now</a>
                         </div>
                     </div>

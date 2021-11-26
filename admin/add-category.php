@@ -177,10 +177,12 @@
                 if($res==true)
                 {
                     //Query Executed and Category Added
-                    $_SESSION['add'] = "<div class='success'>Category Added Successfully.</div>";
+                    $_SESSION['add'] = "<div class='success'>Category Added Successfully.</div>";?>
                     //Redirect to Manage Category Page
-                    header('location:'.SITEURL.'admin/manage-category.php');
-                }
+                    <script type="text/javascript">
+	                window.location="manage-category.php";
+                    </script>
+               <?php }
                 else
                 {
                     //Failed to Add CAtegory

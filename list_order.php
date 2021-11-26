@@ -9,9 +9,10 @@ $userlevel = $_SESSION['userlevel'];
          Header("Location: form_login.php");
      }
 $m_id = $_SESSION['id'];
-$queryorder = "SELECT * FROM order_head WHERE m_id=$m_id";
+$queryorder = "SELECT * FROM order_head WHERE m_id=$m_id ORDER BY dttm DESC";
 $rsorder = mysqli_query($conn, $queryorder);
 // echo $queryorder;
+$sn = 1;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +35,7 @@ $rsorder = mysqli_query($conn, $queryorder);
     text-decoration: none;
 }
 </style>
-<section class="food-search" style="background-image: url(images/111.png); background-attachment: fixed;">
+<section class="food-search" style="background-image: url(images/111.png); background-attachment: fixed; ">
 <div class="overlay" ></div>
     <div class="container " style="padding: 6% 0;">
         <div class="row">
@@ -57,19 +58,19 @@ $rsorder = mysqli_query($conn, $queryorder);
                             <tbody>
                                 <?php foreach ($rsorder as $row) { ?>
                                     <tr>
-                                        <td><?php echo $row['o_id']; ?></td>
+                                        <td><?php echo $sn++; ?></td>
                                         <td>
                                             <?php
                                             $st = $row['status'];
                                             if ($st == 1) {
                                                 echo "<font color = 'blue'>";
-                                                echo 'รอชำระเงิน';
+                                                echo 'กำลังทำอาหาร';
                                             } elseif ($st == 2) {
                                                 echo "<font color = '#3cb329'>";
-                                                echo 'ชำระเงินแล้ว';
+                                                echo 'เรียกชำระเงิน';
                                             } elseif ($st == 3) {
-                                                echo "<font color = 'red'>";
-                                                echo 'ยกเลิก';
+                                                echo "<font color = '#3cb329'>";
+                                                echo 'ชำระเงินแล้ว';
                                             }
                                             ?>
                                         </td>
@@ -82,11 +83,11 @@ $rsorder = mysqli_query($conn, $queryorder);
                                                 echo "<a href='order_detail.php?o_id=$o_id&do=payment' class='btn btn-primary btn-xs'>
                                                 View </a>";
                                             } elseif ($st == 2) {
-                                                echo "<a href='#' class='btn btn-success btn-xs'>
-                                                ชำระเงินแล้ว </a>";
+                                                echo "<a href='order_detail.php?o_id=$o_id&do=payment' class='btn btn-success btn-xs'>
+                                                เรียกชำระเงิน </a>";
                                             } elseif ($st == 3) {
-                                                echo "<a href='#' class='btn btn-danger btn-xs'>
-                                                ยกเลิก </a>";
+                                                echo "<a href='order_detail.php?o_id=$o_id&do=payment' class='btn btn-success btn-xs'>
+                                                ชำระเงินแล้ว </a>";
                                             }
                                             ?>
 

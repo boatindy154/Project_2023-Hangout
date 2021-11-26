@@ -239,7 +239,7 @@
                 if($res2 == true)
                 {
                     //Data inserted Successfullly
-                    $_SESSION['add'] = "<div class='success'>Food Added Successfully.</div>";?>
+                    // $_SESSION['add'] = "<div class='success'>Food Added Successfully.</div>";?>
                     <script type="text/javascript">
 	                window.location="manage-food.php";
                     </script>

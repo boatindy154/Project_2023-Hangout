@@ -10,7 +10,7 @@
     text-decoration: none;
 }
 </style>
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <section class="bg food-search" style="background-image: url(../images/111.png); background-attachment: fixed;">
 <div class="overlay" style="padding-bottom: 50%;"></div>
     <div class="main-content1" style="position: relative;">
@@ -36,6 +36,7 @@
                     <th>Order Date</th>
                     <th>Status</th>
                     <th>Customer Name</th>
+                    <th>Update</th>
                     <!-- <th>Actions</th> -->
                 </tr>
 
@@ -79,18 +80,52 @@
                                     echo 'Playing';
                                 } elseif ($status == "2") {
                                     echo "<font color = '#3cb329'>";
-                                    echo 'ชำระเงินแล้ว';
+                                    echo 'Played';
                                 } elseif ($status == "3") {
                                     echo "<font color = 'red'>";
                                     echo 'ยกเลิก';
                                 }
+                                
+                            echo '</td>';
+
+                            echo '<td>'; 
+                            echo $customer_name; 
+                            echo '</td>';
+                            if($status ==2){
+                                
+                            }else{
+                                echo "<td colspan=6 align='center'>";
+                            echo "<a href='?action=update&id=$id 'class='btn btn-info'>Update</a>";
+                        
+                            }
+                            echo '</tr>';
                                 ?>
-                            </td>
+                        <?php if(isset($_GET['action']) && $_GET['action'] == 'update'){
+                        $id = $_GET['id'];
+                $sql1 = "SELECT * FROM tbl_music
+                        WHERE  id = $id "; 
+                $res3 = mysqli_query($conn, $sql1);
+                $sql2 = "UPDATE tbl_music SET 
+                        status = 2
+                        WHERE id = $id";
+                $res1 = mysqli_query($conn, $sql2);
+                if($res1){
+                    echo "<script>";
+                    echo "Swal.fire({
+                        icon: 'success',
+                        title: 'Update Music',
+                        text: 'ลูกค้าชำระเงินเสร็จสิ้น',
+                        showConfirmButton: false,
+                        timer: 3000
+                      }).then((result) => {
+                        if (result.isDismissed) {
+                            window.location.href = 'manage-music.php';
+                        }
+                      });";
 
-                            <td><?php echo $customer_name; ?></td>
-                            
-                        </tr>
-
+                    echo "</script>";
+                }
+            } ?>
                 <?php
 
                     }

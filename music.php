@@ -10,7 +10,38 @@ $rsmusic = mysqli_query($conn, $music);
 $sn = 1;
 
 ?>
-<style>@media screen and (min-width: 601px) {
+  <script src="sweetalert2.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+<style>
+    .btn {
+    padding: 1%;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+        .btn-primary {
+    background-color: #ff6b81;
+    color: white;
+    cursor: pointer;
+    vertical-align: top;
+}
+.btn-primary:hover{
+    color: white;
+    background-color: #ff4757;
+
+}
+a {
+      color: white;
+
+    }
+        a:hover {
+      color: #ff7b00;
+      text-decoration: none;
+    }
+@media screen and (min-width: 601px) {
   h3 {
     font-size: 1.5rem;
   }
@@ -97,19 +128,29 @@ $sn = 1;
             //Data Inserted
             //echo "Data Inserted";
             //Create a Session Variable to Display Message
-            $_SESSION['add'] = "<div class='success'>User Added Successfully.</div>";
             //Redirect Page to Manage Admin?>
             <script type="text/javascript">
-	        window.location="music.php";
+                
+	        // window.location="music.php";
+            Swal.fire({
+                                icon: 'success',
+                                title: 'Success',
+                                text: 'ขอเพลงสำเร็จ',
+                                showConfirmButton: false,
+                                timer: 5000
+                              }).then((result) => {
+                                if (result.isDismissed) {
+                                    window.location.href = 'music.php';
+                                }
+                              });
             </script>
-
+            
         <?php } 
         else
         {
             //FAiled to Insert DAta
             //echo "Faile to Insert Data";
             //Create a Session Variable to Display Message
-            $_SESSION['add'] = "<div class='error'>Failed to Add Admin.</div>";
             //Redirect Page to Add Admin
             header('location:index.php');
         }

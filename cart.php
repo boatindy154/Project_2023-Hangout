@@ -127,18 +127,18 @@ if ($act == 'cancel') {
                                     location='cart.php?act=cancel';" />
 
                                         <input type="submit" class="btn btn-warning" name="button" id="button" value="ปรับปรุง" />
-                                        <input onclick="myFunction()" type="button" class="btn btn-success" name="Submit2" value="สั่ง" />
+                                        <input onclick=" window.location = 'confirm.php';" type="button" class="btn btn-success" name="Submit2" value="สั่ง" />
                                     </td>
                                 </tr>
                             <?php } else {
-                                echo '<h3 align="center">*******ไม่มีสินค้า*******</h3>';
+                                echo '<h3 style="color:white"; align="center">*******ไม่มีสินค้า*******</h3>';
                             } ?>
                         </table>
                     </form>
                 </div>
         </div>
     </div>
-    <br><br><br><br>
+    <br><br><br><br><br><br>
 </section>
 
 </html>

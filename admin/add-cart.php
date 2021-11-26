@@ -3,7 +3,7 @@
         //check login
         // if($_SESSION['full_name'] == '')
 
-    // echo '<pre>' ;
+    //     echo '<pre>';
     // print_r($_SESSION);
     // echo '</pre>';
 
@@ -128,7 +128,7 @@
                             echo "<input type='number' name='amount[$id]' value='$qty' class='form-control' min='1'  size='2'/></td>";
                                 echo "<td  align='right'>" .number_format($sum,2) . "</td>";
                             #remove
-                            echo "<td  align='center'><a href='cart.php?id=$id&act=remove' class='btn btn-primary btn-sm'>ลบ</a></td>";
+                            echo "<td  align='center'><a href='add-cart.php?id=$id&act=remove' class='btn btn-primary btn-sm'>ลบ</a></td>";
                             echo "</tr>";
                         }
                         
@@ -148,7 +148,7 @@
                             <td class=text-center><a href="index.php" style="color: black;">กลับหน้ารายการสินค้า</a></td>
                             <td colspan="6" align="right">
                                 <input type="button" class="btn btn-primary" name="btncancel" value="ยกเลิกการสั่ง" onclick="window.
-                                    location='cart.php?act=cancel';"/>
+                                    location='add-cart.php?act=cancel';"/>
 
                                 <input type="submit" class="btn btn-warning" name="button" id="button" value="ปรับปรุง" />
                                 <input type="button" class="btn btn-success" name="Submit2" value="สั่ง" onclick="window.

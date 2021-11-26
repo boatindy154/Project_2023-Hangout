@@ -25,7 +25,7 @@
     $m_id = mysqli_real_escape_string($conn,$_POST["m_id"]);
     $total = mysqli_real_escape_string($conn,$_POST["total"]);
     $dttm = date("Y-m-d H:i:s");
-    
+    $table_number = mysqli_real_escape_string($conn,$_POST["table_number"]);
 
     mysqli_query($conn, "BEGIN");
     $sql1="INSERT INTO order_head 
@@ -38,7 +38,8 @@
     '$email',
     '$phone',
     '$total',
-    1
+    1,
+    '$table_number'
     )";
     $query1 = mysqli_query($conn, $sql1) or die ("Error in query $sql1" . mysqli_error($conn));
     echo $sql1;

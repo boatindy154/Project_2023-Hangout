@@ -6,7 +6,57 @@
      if($userlevel!='M'){
          Header("Location: form_login.php");
      }?>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 
+<style>
+    a {
+      color: white;
+
+    }
+        a:hover {
+      color: #ff7b00;
+      text-decoration: none;
+    }
+    .food-menu-box {
+    width: 48%;
+    margin: 1%;
+    padding: 2%;
+    float: left;
+    background-color: white;
+    border-radius: 15px;
+}
+    .food-menu-desc {
+    width: 70%;
+    float: left;
+    margin-left: 8%;
+}
+.btn {
+    padding: 1%;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+        .btn-primary {
+    background-color: #ff6b81;
+    color: white;
+    cursor: pointer;
+    vertical-align: top;
+}
+.btn-primary:hover{
+    color: white;
+    background-color: #ff4757;
+
+}
+.img-responsivee {
+        width: 100%;
+    }
+@media only screen and (max-width:576px){
+    .img-responsivee {
+        width: 167%;
+    }
+}
+</style>
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center bg" style="background-image: url(images/111.png); background-attachment: fixed;">
     <div class="overlay" ></div>
@@ -64,7 +114,7 @@
                                     {
                                         //Image Available
                                         ?>
-                                        <img src="images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                                        <img src="images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsivee img-curve">
                                         <?php
                                     }
                                 ?>
@@ -77,7 +127,6 @@
                                 <p class="food-detail">
                                     <?php echo $description; ?>
                                 </p>
-                                <br>
 
                                 <a href="cart.php?id=<?php echo $row['p_id']; ?>&act=add" class="btn btn-primary">Order Now</a>
                             </div>

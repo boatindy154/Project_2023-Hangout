@@ -17,7 +17,10 @@
         $user = mysqli_fetch_assoc($result);
 
         if ($user['username'] === $username) {
-            echo "<script>alert('Username already exists');</script>";
+            echo "<script>";
+            echo "alert('Username already exists');";
+            echo "window.history.back()";
+            echo "</script>";
         } else {
             $passwordenc = md5($password);
 
@@ -26,15 +29,18 @@
             $result1 = mysqli_query($conn, $query7);
 
             if ($result1) {
-                $_SESSION['success'] = "Insert user successfully";
-                header("Location: form_login.php");
+            echo "<script>";
+            echo "alert('Username already exists');";
+            echo "</script>";
+            header('Location: form_login.php');
             } else {
-                $_SESSION['error'] = "Something went wrong";
-                header("Location: register.php");
+            echo "<script>";
+            echo "alert('Something went wrong');";
+            echo "window.history.back()";
+            echo "</script>";
             }
         }
 
     }
-
 
 ?>

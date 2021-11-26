@@ -1,4 +1,9 @@
-<?php include('partials/menu.php'); ?>
+<?php include('partials/menu.php'); 
+session_start();
+// echo '<pre>';
+// print_r($_SESSION);
+// echo '</pre>';
+?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <style>
     a{
@@ -39,14 +44,14 @@
                     <th>Order Date</th>
                     <th>Status</th>
                     <th>Customer Name</th>
-                    <th>Phone</th>
+                    <th>Table</th>
                     <!-- <th>Email</th> -->
                     <th>Actions</th>
                 </tr>
 
                 <?php
                 //Get all the orders from database
-                $sql = "SELECT * FROM order_head ORDER BY dttm ASC"; // DIsplay the Latest Order at First
+                $sql = "SELECT * FROM order_head ORDER BY dttm DESC"; // DIsplay the Latest Order at First
                 //Execute Query
                 $res = mysqli_query($conn, $sql);
                 //Count the Rows
@@ -59,20 +64,20 @@
                     while ($row = mysqli_fetch_assoc($res)) {
                         //Get all the order details
                         $o_id = $row['o_id'];
-                        $m_id = $row['m_id'];
+                        $_SESSION["m_id"] = $row['m_id'];
                         $total = $row['total'];
                         $dttm = $row['dttm'];
                         $status = $row['status'];
                         $full_name = $row['full_name'];
                         $phone = $row['phone'];
                         $email = $row['email'];
-
+                        $table_number = $row['table_number'];
 
                 ?>
 
                         <tr>
                             <td><?php echo $sn++; ?>. </td>
-                            <td><?php echo $m_id; ?></td>
+                            <td><?php echo $_SESSION["m_id"]; ?></td>
                             <td><?php echo number_format($row['total'], 2) ?></td>
                             <td><?php echo $dttm; ?></td>
 
@@ -82,19 +87,19 @@
 
                                 if ($status == "1") {
                                     echo "<font color = 'blue'>";
-                                    echo 'รอชำระเงิน';
+                                    echo 'กำลังทำอาหาร';
                                 } elseif ($status == "2") {
                                     echo "<font color = '#3cb329'>";
-                                    echo 'ชำระเงินแล้ว';
+                                    echo 'ลูกค้าเรียกชำระเงิน';
                                 } elseif ($status == "3") {
-                                    echo "<font color = 'red'>";
-                                    echo 'ยกเลิก';
+                                    echo "<font color = '#28a745'>";
+                                    echo 'ชำระเงินแล้ว';
                                 }
                                 ?>
                             </td>
 
                             <td><?php echo $full_name; ?></td>
-                            <td><?php echo $phone; ?></td>
+                            <td><?php echo $table_number; ?></td>
                             
                             <td>
                                 <a href="update-ordertest.php?o_id=<?php echo $o_id; ?>&do=watch" class="btn-secondary">Update Order</a>

@@ -229,9 +229,11 @@
                 if($res2==true)
                 {
                     //Category Updated
-                    $_SESSION['update'] = "<div class='success'>Category Updated Successfully.</div>";
-                    header('location:'.SITEURL.'admin/manage-category.php');
-                }
+                    $_SESSION['update'] = "<div class='success'>Category Updated Successfully.</div>";?>
+                    <script type="text/javascript">
+	                window.location="manage-category.php";
+                    </script>
+               <?php }
                 else
                 {
                     //failed to update category
@@ -245,6 +247,6 @@
 
     </div>
 </div>
+<br><br>
 </section>
-<br>
 <?php include('partials/footer.php'); ?>

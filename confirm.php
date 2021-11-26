@@ -14,7 +14,7 @@ $m_id = $_SESSION['id'];
 
 include 'config/constantss.php';
 
-$qmember = "SELECT full_name, email, phone FROM tbl_admin WHERE id = $m_id";
+$qmember = "SELECT full_name, table_number FROM tbl_admin WHERE id = $m_id";
 $rsmember = mysqli_query($conn , $qmember) or die ("Error in query $qmember" );
 $rowmember = mysqli_fetch_array($rsmember);
 
@@ -50,9 +50,9 @@ $rowmember = mysqli_fetch_array($rsmember);
 <div class="overlay" ></div>
   <div class="container " style="padding: 6% 0; position: relative;">
     <div class="row">
-      <div class="col-12 col-sm-12 col-md-12">
+      <div class="col-12 col-sm-12 col-md-12 table-responsive">
         <h3 class="text-white">ยืนยันการสั่งซื้อ</h3>
-        <form id="frmcart" name="frmcart" method="post" action="saveorder.php">
+        <form id="frmcart" name="frmcart" method="POST" action="saveorder.php">
           <table class="table table-bordered table-hover table-striped" style="background-color: lavenderblush;">
             <tr>
               <th width="5%" bgcolor="">#</td>
@@ -97,16 +97,16 @@ $rowmember = mysqli_fetch_array($rsmember);
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4" class="text-white">ชื่อ - นามสกุล</label>
-                <input type="text" class="form-control" 
-                 name="full_name" value="<?php echo $rowmember['full_name'];?>">
+                <input type="text" class="form-control disabled" 
+                 name="full_name"  value="<?php echo $rowmember['full_name'];?>">
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputEmail4" class="text-white">เบอร์โทร</label>
-                <input type="text" class="form-control" id="inputEmail4" name="phone"
-                name="full_name" value="<?php echo $rowmember['phone'];?>">
+                <label for="inputEmail4" class="text-white">โต๊ะ</label>
+                <input type="text" class="form-control disabled" id="inputEmail4"  name="table_number"
+                 value="<?php echo $rowmember['table_number'];?>">
               </div>
             </div>
             <input type="hidden" name="m_id" value="<?php echo $m_id; ?>">

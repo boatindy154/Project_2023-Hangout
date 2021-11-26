@@ -11,41 +11,55 @@
 
 <link rel="stylesheet" href="css/login.css">
 </head>
-<body class="bglogin">
+<style>
+    .bg{
+        background: #fff;
+    padding: 30px 35px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+    
+</style>
+<body class="bglogin" style="background-attachment: fixed;">
 <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
     <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-        <h1 class="awesome">Register</h1>
+        <!-- <h1 class="awesome">Forgot Password</h1> -->
     </div>
 
 
 
-    <form method="post" action="checkregister.php">
-        <div class="formbg-outer">
-            <div class="formbg">
-                <div class="formbg-inner padding-horizontal--48">
-                    <span class="padding-bottom--15">Sign up to your account</span>
+    <form  style="padding-right: 10%;">
+        <div class="formbg-outer"><br><br><br>
+            <div class="formbg" style="float: right;">
+                <div class="formbg-inner padding-horizontal--48 bg">
+                    <h1 class="awesome">Forgot Password</h1>
+
+                    <span style="color: black;" class="padding-bottom--15">New Password</span>
                     <form id="stripe-login">
                         <div class="field padding-bottom--24">
-                            <input type="text" name="username" placeholder=" Username">
+                        <!-- <label for="username" style="color: white;">Code</label> -->
+
+                            <input type="text" name="password" placeholder=" Create new password">
                         </div>
                         <div class="field padding-bottom--24">
+                        <!-- <label for="username" style="color: white;">Code</label> -->
+
+                            <input type="text" name="cpassword" placeholder=" Confirm your password">
+                        </div>
+                        <!-- <div class="field padding-bottom--24">
                             <div class="grid--50-50">
                             </div>
+                            <label for="username" style="color: white;">New - Password</label>
+
                             <input type="password" name="password" placeholder=" Password">
                         </div>
                         <div class="field padding-bottom--24">
+                        <label for="username" style="color: white;">Re - Password</label>
+
                             <input type="text" name="full_name" placeholder=" Full name">
-                        </div>
+                        </div> -->
                         <div class="field padding-bottom--24">
-                            <input type="text" name="email" placeholder=" Email">
-                        </div>
-                        <div class="field padding-bottom--24">
-                            <input type="text" name="phone" placeholder=" Phone">
-                        </div>
-                        <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
-                        </div>
-                        <div class="field padding-bottom--24">
-                            <input type="submit" name="submit" value="Sign Up" >
+                            <input type="submit" name="change-password" value="Change" >
                         </div>
                         <!-- <div class="field">
                   <a class="ssolink" href="#">Register</a>
@@ -64,6 +78,7 @@
         </div>
     </form>
 </div>
+
 </body>
 </html>
 

@@ -6,14 +6,19 @@
 ?>
 
 
-
+<meta charset="UTF-8">
     <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
         <title>Food Order Website - Home Page</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="../css/style.css" type="text/css">
         <link rel="stylesheet" href="../css/admin.css">
-    </head>
-    <style>
+</head>
+<style>
     .menu .icon {
   display: none;
 }
@@ -47,10 +52,12 @@
     
   }
 }
+
 </style>
     <body>
         <!-- Menu Section Starts -->
         <section class=" navv ftco-navbar-light">
+          <div class="contianer">
             <div class=" menu" id="myTopnav" style="overflow: hidden; place-content:center;">
                 
                     <a href="index.php">Home</a>
@@ -59,12 +66,13 @@
                     <a href="manage-category.php">Category</a>
                     <a href="manage-food.php">Food</a></li>
                     <a href="manage-ordertest.php">Order</a>
-                    <a href="logout.php">Logout</a>
+                    <a href="../logout.php">Logout</a>
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
                     </a>
             </div>
             <div class="clearfix"></div>
+            </div>
         </section>
         <!-- Menu Section Ends -->
         <script>

@@ -3,7 +3,7 @@
 session_start();
 // $userlevel = $_SESSION['userlevel'];
 ?>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Main Content Section Starts -->
         <section class=" food-search " style="background-image: url(../images/111.png); background-attachment: fixed; ">
         <div class="overlay "></div>

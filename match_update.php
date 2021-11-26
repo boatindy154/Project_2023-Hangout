@@ -4,14 +4,18 @@ session_start();
 //   echo '<pre>';
 //   print_r($_SESSION['table_number']);
 //   echo '</pre>';
+$id = $_GET['id'];
+
 $table_number = $_SESSION['table_number'];
 if ($_SESSION['full_name'] == '') {
     header("Location: login.php");
 }
 include('config/constantss.php');
 
+if ($_SESSION['table_number'] == $id) {
+    header("Location: match.php");
+}
 
-$id = $_GET['id'];
 //query
 $query = "SELECT tbl_table.*, tbl_admin.*
 FROM tbl_table
@@ -50,7 +54,7 @@ $row = mysqli_fetch_array($result);
 
 <section class="food-search" style="background-image: url(images/111.png); background-attachment: fixed;">
     <div class="overlay"></div>
-    <div class="container" style="padding: 5%;">
+    <div class="container" style="padding-top: 6%;" >
         <div class="row" style="justify-content: center;">
             <div class="col-12 col-sm-11 col-md-7 " style="background-color: white;">
                 <br>
@@ -78,12 +82,12 @@ $row = mysqli_fetch_array($result);
                                         <input type="text" name="full_name" class="form-control" readonly value="<?php echo $row['full_name']; ?>">
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <!-- <div class="form-group row">
                                     <label class="col-sm-2 ">Message</label>
                                     <div class="col-sm-5">
-                                        <input type="text" name="Message" class="form-control" maxlength="10" placeholder="อยากรู้จักครับ">
+                                        <input type="text" name="Message" class="form-control" maxlength="55" placeholder="อยากรู้จักครับ">
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="form-group row">
                                     <label class="col-sm-2 "></label>
                                     <div class="col-sm-10">
@@ -99,6 +103,7 @@ $row = mysqli_fetch_array($result);
         </div>
     </div>
 
+    <br><br><br><br><br><br><br>
 
 </section>
 <?php
@@ -108,16 +113,19 @@ if (isset($_POST['submit'])) {
 
     //1. Get the Data from form
     $id = $_POST['id'];
-
+    $table_name = $_POST['table_name'];
     //2. SQL Query to Save the data into database
     $sql2 = "UPDATE tbl_table SET 
             table_match=1,
             table_nummatch = '$table_number'
             WHERE id='$id'";
-
-
-    //3. Executing Query and Saving Data into Datbase
     $res = mysqli_query($conn, $sql2);
+
+    $sql3 = "UPDATE tbl_table SET 
+            table_table=1
+            WHERE table_number='$table_number'";
+    $res2 = mysqli_query($conn, $sql3);
+    //3. Executing Query and Saving Data into Datbase
     //4. Check whether the (Query is Executed) data is inserted or not and display appropriate message
     if ($res == TRUE) {
         //Data Inserted

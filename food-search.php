@@ -7,6 +7,22 @@ if ($userlevel != 'M') {
     Header("Location: form_login.php");
 } ?>
 
+<style>
+        a:hover {
+      color: #ff7b00;
+      text-decoration: none;
+    }
+    .food-menu-boxx {
+    width: 48%;
+    margin: 1%;
+    padding: 2%;
+    float: left;
+    background-color: white;
+    border-radius: 15px;
+}
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 <!-- fOOD sEARCH Section Starts Here -->
 <section class="food-search text-center " style="background-image: url(images/111.png); background-attachment: fixed;">
     <div class="overlay"></div>
@@ -58,7 +74,7 @@ if ($userlevel != 'M') {
                     $image_name = $row['image_name'];
             ?>
 
-                    <div class="food-menu-box">
+                    <div class="food-menu-boxx">
                         <div class="food-menu-img">
                             <?php
                             // Check whether image name is available or not
@@ -82,7 +98,6 @@ if ($userlevel != 'M') {
                             <p class="food-detail">
                                 <?php echo $description; ?>
                             </p>
-                            <br>
 
                             <a href="#" class="btn btn-primary">Order Now</a>
                         </div>

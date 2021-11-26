@@ -16,15 +16,14 @@
     // echo '</pre>';
     
     // exit;
+    date_default_timezone_set("Asia/Bangkok");
 
 
-
-    $name = mysqli_real_escape_string($conn,$_POST["full_name"]);
-    $email = mysqli_real_escape_string($conn,$_POST["email"]);
-    $phone = mysqli_real_escape_string($conn,$_POST["phone"]);
+    $full_name = mysqli_real_escape_string($conn,$_POST["full_name"]);
     $m_id = mysqli_real_escape_string($conn,$_POST["m_id"]);
     $total = mysqli_real_escape_string($conn,$_POST["total"]);
     $dttm = date("Y-m-d H:i:s");
+    $table_number = mysqli_real_escape_string($conn,$_POST["table_number"]);
     
 
     mysqli_query($conn, "BEGIN");
@@ -34,14 +33,15 @@
     null,
     $m_id,
     '$dttm',
-    '$name',
-    '$email',
-    '$phone',
+    '$full_name',
+    '0',
+    '0',
     '$total',
-    1
+    1,
+    '$table_number'
     )";
     $query1 = mysqli_query($conn, $sql1) or die ("Error in query $sql1" . mysqli_error($conn));
-    echo $sql1;
+    // echo $sql1;
 
     $sql2 = "SELECT MAX(o_id) as o_id
     FROM order_head
@@ -76,9 +76,9 @@
             )";
             $query4 = mysqli_query($conn, $sql4) or die ("Error in query $sql4" . mysqli_error($conn));
 
-            echo '<pre>';
-            echo $sql4;
-            echo '</pre>';
+            // echo '<pre>';
+            // echo $sql4;
+            // echo '</pre>';
         }
 // exit;
 

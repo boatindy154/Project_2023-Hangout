@@ -15,7 +15,7 @@
       
       <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
         <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-          <h1><a href="#" rel="dofollow">2023 Hangout</a></h1>
+          <h1 class="awesome">2023 Hangout</h1>
         </div>
         <form name="frmlogin"  method="post" action="checklogin.php">
         <div class="formbg-outer">
@@ -24,17 +24,17 @@
               <span class="padding-bottom--15">Log in to your account</span>
               <form id="stripe-login">
                 <div class="field padding-bottom--24">
-                  <label for="username">Username</label>
-                  <input type="username" name="username">
+                  <label for="username" style="color: white;">Username</label>
+                  <input type="username" name="username" placeholder="Username">
                 </div>
                 <div class="field padding-bottom--24">
                   <div class="grid--50-50">
-                    <label for="password">Password</label>
+                    <label for="password" style="color: white;">Password</label>
                     <div class="reset-pass">
-                      <a href="#">Forgot your password?</a>
+                      <a href="forgotpass.php">Forgot your password?</a>
                     </div>
                   </div>
-                  <input type="password" name="password">
+                  <input type="password" name="password" placeholder="Password">
                 </div>
                 <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                 </div>

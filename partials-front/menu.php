@@ -1,6 +1,5 @@
 <?php 
 include ('config/constantss.php');
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +8,10 @@ include ('config/constantss.php');
     <!-- Important to make website responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Website</title>
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 
     <!-- Link our CSS file -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -49,6 +52,7 @@ include ('config/constantss.php');
     
   }
 }
+
 </style>
 <body>
     <!-- Navbar Section Starts Here -->
@@ -63,13 +67,12 @@ include ('config/constantss.php');
             <div class="menu" id="myTopnav" style="overflow: hidden;  ">
             
                 <a class="" href="index.php" title="Logo">
-                    <img style="" src="images/logo_transparent11.jpg" alt="Restaurant Logo" class="logo img-responsive">
+                    <img src="images/logo_transparent11.jpg" alt="Restaurant Logo" class="logo ">
                 </a>
               
                     
                         <a href="index.php">Home</a>
-                   
-                   
+
                         <a href="music.php">Music</a>
                     
                     

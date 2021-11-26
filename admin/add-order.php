@@ -1,6 +1,10 @@
 <?php
-    
     include('partials/menu.php');  
+    session_start();
+//     echo '<pre>';
+// print_r($_SESSION);
+// echo '</pre>';
+    $o_id = $_GET['o_id'];
     ?>
 <style>
     .btn-primary {
@@ -79,7 +83,7 @@
                                 </p>
                                 <br>
 
-                                <a href="add-cart.php?id=<?php echo $row['p_id']; ?>&act=add" class="btn btn-primary">Order Now</a>
+                                <a href="add-cart.php?id=<?php echo $row['p_id']; ?>&act=add&o_id=<?php echo $o_id; ?>" class="btn btn-primary">Order Now</a>
                             </div>
                         </div>
 
