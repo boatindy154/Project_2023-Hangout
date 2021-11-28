@@ -52,7 +52,13 @@ a {
     font-size: 1.2rem;
     text-align: left;
   }
-}</style>
+}
+@media only screen and (max-width:1024px){
+    .food-search {
+      padding: 27% 0;
+    }   
+}
+</style>
 <!-- music sEARCH Section Starts Here -->
 <section class=" food-search text-center" style="background-image: url(images/111.png); background-attachment: fixed;">
     <div class="overlay" ></div>

@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php include_once ("controller.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +28,7 @@
 
 
 
-    <form  style="padding-right: 10%;">
+    <form action="reset-code.php" method="POST" autocomplete="off" style="padding-right: 10%;">
         <div class="formbg-outer"><br><br><br>
             <div class="formbg" style="float: right;">
                 <div class="formbg-inner padding-horizontal--48 bg">
@@ -39,7 +39,7 @@
                         <div class="field padding-bottom--24">
                         <!-- <label for="username" style="color: white;">Code</label> -->
 
-                            <input type="text" name="otp" placeholder=" Enter Code">
+                        <input type="number" name="OTPverify" placeholder="Verification Code" required>
                         </div>
                         <!-- <div class="field padding-bottom--24">
                             <div class="grid--50-50">
@@ -54,7 +54,7 @@
                             <input type="text" name="full_name" placeholder=" Full name">
                         </div> -->
                         <div class="field padding-bottom--24">
-                            <input type="submit" name="check-reset-otp" value="Submit" >
+                            <input type="submit" name="verifyEmail" value="Verify" >
                         </div>
                         <!-- <div class="field">
                   <a class="ssolink" href="#">Register</a>

@@ -13,9 +13,23 @@ if ($_SESSION['full_name'] == '') {
 include('config/constantss.php');
 
 if ($_SESSION['table_number'] == $id) {
-    header("Location: match.php");
+    ?>
+        <script type="text/javascript">
+            alert("โต๊ะตัวเอง");
+        window.location="match.php";
+        </script>
+   <?php
 }
-
+$sql6 = "SELECT * FROM tbl_table 
+    WHERE  id =  $id ";
+    $res3 = mysqli_query($conn, $sql6);
+    $row4 = mysqli_fetch_assoc($res3);
+    if($row4['table_match'] == 1){ ?>
+        <script type="text/javascript">
+            alert("มีคนกำลังขอชนแก้ว รอสักครู่");
+        window.location="match.php";
+        </script>
+   <?php }
 //query
 $query = "SELECT tbl_table.*, tbl_admin.*
 FROM tbl_table
@@ -115,6 +129,7 @@ if (isset($_POST['submit'])) {
     $id = $_POST['id'];
     $table_name = $_POST['table_name'];
     //2. SQL Query to Save the data into database
+    
     $sql2 = "UPDATE tbl_table SET 
             table_match=1,
             table_nummatch = '$table_number'
@@ -125,6 +140,7 @@ if (isset($_POST['submit'])) {
             table_table=1
             WHERE table_number='$table_number'";
     $res2 = mysqli_query($conn, $sql3);
+    
     //3. Executing Query and Saving Data into Datbase
     //4. Check whether the (Query is Executed) data is inserted or not and display appropriate message
     if ($res == TRUE) {
@@ -147,5 +163,8 @@ if (isset($_POST['submit'])) {
         header("location:admin/add-admin.php");
     }
 }
-
+echo '<pre>';
+print_r($id);
+echo '<pre>';
+print_r($table_number);
 ?>

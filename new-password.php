@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php include_once ("controller.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +28,7 @@
 
 
 
-    <form  style="padding-right: 10%;">
+    <form action="new-password.php" method="POST" autocomplete="off" style="padding-right: 10%;">
         <div class="formbg-outer"><br><br><br>
             <div class="formbg" style="float: right;">
                 <div class="formbg-inner padding-horizontal--48 bg">
@@ -39,12 +39,12 @@
                         <div class="field padding-bottom--24">
                         <!-- <label for="username" style="color: white;">Code</label> -->
 
-                            <input type="text" name="password" placeholder=" Create new password">
+                        <input type="password" name="password" placeholder="Password" required><br>
                         </div>
                         <div class="field padding-bottom--24">
                         <!-- <label for="username" style="color: white;">Code</label> -->
 
-                            <input type="text" name="cpassword" placeholder=" Confirm your password">
+                        <input type="password" name="confirmPassword" placeholder="Confirm Password" required><br>
                         </div>
                         <!-- <div class="field padding-bottom--24">
                             <div class="grid--50-50">
@@ -59,7 +59,7 @@
                             <input type="text" name="full_name" placeholder=" Full name">
                         </div> -->
                         <div class="field padding-bottom--24">
-                            <input type="submit" name="change-password" value="Change" >
+                            <input type="submit" name="changePassword" value="Change" >
                         </div>
                         <!-- <div class="field">
                   <a class="ssolink" href="#">Register</a>

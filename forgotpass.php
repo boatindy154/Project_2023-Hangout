@@ -1,5 +1,5 @@
 
-<?php session_start();?>
+<?php include_once ("controller.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +60,7 @@ button[type="button"] {
 
 
 
-    <form id="myForm" style="padding-right: 10%;">
+    <form action="forgotpass.php" method="POST" autocomplete="off" style="padding-right: 10%;">
         <div class="formbg-outer"><br><br><br>
             <div class="formbg" style="float: right;">
                 <div class="formbg-inner padding-horizontal--48 bg">
@@ -71,7 +71,7 @@ button[type="button"] {
                         <div class="field padding-bottom--24">
                         <!-- <label for="username" style="color: white;">Code</label> -->
 
-                            <input type="email" id="email"  placeholder=" Enter email address" require>
+                            <input type="email" name="email"  placeholder=" Enter email address" require>
                         </div>
                         <!-- <div class="field padding-bottom--24">
                             <div class="grid--50-50">
@@ -86,7 +86,8 @@ button[type="button"] {
                             <input type="text" name="full_name" placeholder=" Full name">
                         </div> -->
                         <div class="field padding-bottom--24">
-                            <button type="button" onclick="sendEmail()" value="Send an email" >Send</button>
+                            <!-- <input type="submit" name="forgot_password" value="Check"> -->
+                            <button type="submit" name="forgot_password" value="Send an email" >Send</button>
                             <!-- <input onclick="sendEmail()" type="submit" value="Send" > -->
                         </div>
                         <!-- <div class="field">
@@ -105,7 +106,7 @@ button[type="button"] {
         </div>
     </form>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script type="text/javascript">
         function sendEmail() {
             var email = $("#email");
@@ -139,7 +140,7 @@ button[type="button"] {
 
 
 
-    </script>
+    </script> -->
 </body>
 </html>
 
