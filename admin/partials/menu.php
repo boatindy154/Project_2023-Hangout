@@ -5,9 +5,11 @@
 
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
 
-<meta charset="UTF-8">
     <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <!-- font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,10 +59,14 @@
     <body>
         <!-- Menu Section Starts -->
         <section class=" navv ftco-navbar-light">
-          <div class="contianer">
-            <div class=" menu" id="myTopnav" style="overflow: hidden; place-content:center;">
-                
+          <div class="container">
+            <div class="menu" id="myTopnav" style="overflow: hidden; place-content:center;">
+            <a class="" href="index.php" title="Logo">
+                    <img src="../images/logo_transparent11.jpg" alt="Restaurant Logo" class="logo ">
+                </a>
+              
                     <a href="index.php">Home</a>
+                    <a href="manage-table.php">Table</a>
                     <a href="manage-music.php">Music</a>
                     <!-- <li><a href="manage-admin.php">Admin</a></li> -->
                     <a href="manage-category.php">Category</a>

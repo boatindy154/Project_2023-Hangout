@@ -120,6 +120,7 @@ $row = mysqli_fetch_array($result);
     <br><br><br><br><br><br><br>
 
 </section>
+<?php include('partials-front/footer.php') ?>
 <?php
 if (isset($_POST['submit'])) {
     // Button Clicked

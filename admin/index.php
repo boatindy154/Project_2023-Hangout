@@ -4,12 +4,36 @@ session_start();
 // $userlevel = $_SESSION['userlevel'];
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    a {
+      color: white;
+
+    }
+a:hover {
+      color: #ff7b00;
+      text-decoration: none;
+    }
+    .main-content1 {
+    padding: 6% 0;
+}
+@media screen and (max-width: 768px) {
+.col-4 {
+    width: 44%;
+    background-color: white;
+    margin: 1%;
+    padding: 2%;
+    float: left;
+}
+}
+</style>
         <!-- Main Content Section Starts -->
         <section class=" food-search " style="background-image: url(../images/111.png); background-attachment: fixed; ">
         <div class="overlay "></div>
         <div class="main-content1 container " style="position: relative;">
+        <h1 class="text-white">Dashboard</h1>
+
             <div class="">
-                <h1 class="text-white">Dashboard</h1>
                 <br><br>
                 <?php 
                 

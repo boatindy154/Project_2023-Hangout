@@ -25,11 +25,15 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
 ?>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- Link our CSS file -->
+<link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <style>
     a{
         color: white;
         
+    }
+    td, th{
+        color: black;
     }
     a:hover {
     color: #ff7b00;
@@ -65,12 +69,13 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
                                     echo "<font color = '#3cb329'>";
                                     echo 'ลูกค้าเรียกชำระเงิน';
                                 } elseif ($rowdetail['status'] == "3") {
-                                    echo "<font color = 'red'>";
+                                    echo "<font color = '#28a745'>";
                                     echo 'ชำระเงินแล้ว';
                                 }
                                 ?> 
             </h4>
-            <table class="table table-bordered table-hover table-striped" style="background-color: lavenderblush;">
+            <div class="table-responsive">
+            <table class="table table-bordered table-hover  table-striped" style="background-color: lavenderblush;">
                 <tr>
                     <th width="5%" bgcolor="">#</td>
                     <th width="10%" bgcolor="">img</td>
@@ -166,7 +171,7 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
                         title: 'ชำระเงิน',
                         text: 'ลูกค้าชำระเงินเสร็จสิ้น',
                         showConfirmButton: false,
-                        timer: 3000
+                        timer: 5000
                       }).then((result) => {
                         if (result.isDismissed) {
                             window.location.href = 'manage-ordertest.php';
@@ -214,14 +219,14 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
 
 
             </table>
-        
+        </div>
     </div>
 </div>
 </section>
 </body>
 
 <?php include('partials/footer.php'); ?>
-<script>
+<!-- <script>
     function myFunction() {
         var r = confirm("ต้งการลบหมวดหมู่นี้ใช่หรือไม่");
         if (r == true) {
@@ -230,4 +235,4 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
             window.location.href
         }
     }
-</script>
+</script> -->

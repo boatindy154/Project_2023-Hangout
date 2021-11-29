@@ -39,7 +39,7 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
     <div class="overlay" ></div>
 <div class="container" style="padding: 6% 0;">
     <div class="row">
-        <div class="col-12 col-sm-12 col-md-12 table-responsive">
+        <div class="col-12 col-sm-12 col-md-12 ">
             <h2 class="text-white">Order</h2>
             <h4 class="text-white">
                 OrderID : <?php echo $rowdetail['o_id']; ?><br>
@@ -56,6 +56,7 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
                                 }
                                 ?> 
             </h4>
+            <div class="table-responsive">
             <table class="table table-bordered table-hover table-striped" style="background-color: lavenderblush; color:black">
                 <tr>
                     <th width="5%" bgcolor="">#</td>
@@ -91,6 +92,7 @@ $rowdetail = mysqli_fetch_array($rscartdetail);
 
                 ?>
             </table>
+            </div>
         </div>
     </div>
 </div>

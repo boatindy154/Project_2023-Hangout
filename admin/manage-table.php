@@ -1,17 +1,9 @@
 <?php
-include('partials-front/menu.php');
+include('partials/menu.php');
 
 session_start();
-if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
-  $url = "https://";
-} else {
-  $url = "http://";
-  $url .= $_SERVER['HTTP_HOST'];
-  $url .= $_SERVER['REQUEST_URI'];
-  $url;
-}
-$page = $url;
-$sec = "20";
+
+
 
 $table_number1 = $_SESSION['table_number'];
 // $table_name = $_GET['$table_name'];
@@ -24,7 +16,7 @@ $table_number1 = $_SESSION['table_number'];
 
 $userlevel = $_SESSION['userlevel'];
 
-if ($userlevel != 'M') {
+if ($userlevel != 'A') {
   Header("Location: form_login.php");
 }
 
@@ -49,7 +41,6 @@ $result = mysqli_query($conn, $query);
   <script src="sweetalert2.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
   <title>รายชื่อโต๊ะจากฐานข้อมูล </title>
   <style type="text/css">
     a {
@@ -196,14 +187,14 @@ $result = mysqli_query($conn, $query);
                     }
                     
                   }?>
-<section class="food-search" style="background-image: url(images/111.png); background-attachment: fixed;">
+<section class="food-search" style="background-image: url(../images/111.png); background-attachment: fixed;">
   <div  class="overlay"></div>
   <div class="container " style="padding: 6% 0;">
     <div class="row">
       <div class="col-sm-2 col-md-2" style="padding-left: 20%;"></div>
-      <div class="col-12 col-sm-11 col-md-7 bg" style="margin-top: 50px;">
+      <div class="col-12 col-sm-11 col-md-7 bg" >
         <br>
-        <h4 align="center" style="color: red;">รายชื่อโต๊ะ</h4>
+        <h4 align="center" style="color: red;">Status Table</h4>
         <?php 
               $sql3 = "SELECT * FROM tbl_table WHERE table_number = $table_number1";
               $result2 = mysqli_query($conn, $sql3);
@@ -286,7 +277,7 @@ $result = mysqli_query($conn, $query);
                   if ($row['table_status'] == 1) {
 
                   echo '<div class="col-2 col-md-2 col-sm-2" style="margin: 5px;">';
-                  echo '<a  href="match_update.php?id=' . $row["id"] . '&table=' . $row["table_number"] . '"class="btn btn-success" ">' . $row['table_name'] . '</a></div>';
+                  echo '<a  href="update-table.php?id=' . $row["id"] . '&table=' . $row["table_number"] . '"class="btn btn-success" ">' . $row['table_name'] . '</a></div>';
                 } else if ($row['table_status'] == 0) {
                   echo '<div class="col-2 col-md-2 col-sm-2" style="margin: 5px;">';
                   echo '<a href="#" class="btn btn-secondary disabled">' . $row['table_name'] . '</a></div>';
@@ -391,7 +382,7 @@ if (isset($_POST['submit'])) {
 </section>
 
 </html>
-<?php include('partials-front/footer.php'); ?>
+<?php include('partials/footer.php'); ?>
 <!-- <script>
   function myFunction() {
     var r = confirm("ยืนยันการสั่ง");

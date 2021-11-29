@@ -10,10 +10,13 @@
     color: #ff7b00;
     text-decoration: none;
 }
+    .padding-top1{
+        padding-top: 10%;
+    }
 </style>
 <section class="bg food-search" style="background-image: url(../images/111.png); background-attachment: fixed;">
 <div class="overlay" ></div>
-<div class="main-content" style="position: relative;">
+<div class="main-content padding-top1" style="position: relative;">
     <div class="wrapper">
         <h1 class="text-white">Update Category</h1>
 
@@ -62,9 +65,9 @@
         
         ?>
 
-        <form action="" method="POST" enctype="multipart/form-data" style="display: table; background-color: lavenderblush; padding: 2%">
-
-            <table class="tbl-30">
+        <form action="" method="POST" enctype="multipart/form-data" style=" background-color: lavenderblush; padding: 2%">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
                 <tr>
                     <td>Title: </td>
                     <td>
@@ -126,7 +129,7 @@
                 </tr>
 
             </table>
-
+        </div>
         </form>
 
         <?php 

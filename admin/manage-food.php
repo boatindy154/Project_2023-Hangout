@@ -50,8 +50,8 @@
             }
 
             ?>
-
-            <table class="table table-bordered table-hover table-striped" style="background-color: lavenderblush;">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped" style="background-color: lavenderblush;">
                 <tr>
                     <th>S.N.</th>
                     <th>Title</th>
@@ -124,7 +124,8 @@
                 ?>
 
 
-            </table>
+                </table>
+            <div class="table-responsive">
         </div>
 
     </div>

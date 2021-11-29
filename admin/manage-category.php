@@ -58,11 +58,11 @@
             <br><br>
 
             <!-- Button to Add Admin -->
-            <a href="<?php echo SITEURL; ?>admin/add-category.php" class="btn-primary">Add Category</a>
+            <a href="add-category.php" class="btn-primary">Add Category</a>
 
             <br /><br /><br />
-
-            <table class="table table-bordered table-hover table-striped" style="background-color: lavenderblush;">
+            <div class="table-responsive">
+                <table class="table table-bordered  table-hover table-striped" style="background-color: lavenderblush;">
                 <tr>
                     <th>S.N.</th>
                     <th>Title</th>
@@ -152,7 +152,8 @@
 
 
 
-            </table>
+                </table>
+            </div>
         </div>
 
     </div>

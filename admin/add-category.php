@@ -1,4 +1,5 @@
 <?php include('partials/menu.php'); ?>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <style>
     a{
@@ -9,10 +10,18 @@
     color: #ff7b00;
     text-decoration: none;
 }
+    .padding-top1{
+        padding-top: 10%;
+    }
+    /* @media only screen and (max-width: 768px){
+        .padding-top1{
+            padding-top: 0%;
+    }
+} */
 </style>
-<section class="bg food-search" style="background-image: url(../images/111.png); background-attachment: fixed;">
+<section class="bg food-search " style="background-image: url(../images/111.png); background-attachment: fixed;">
 <div class="overlay" ></div>
-<div class="main-content" style="position: relative;">
+<div class="main-content padding-top1" style="position: relative;">
     <div class="wrapper">
         <h1 class="text-white">Add Category</h1>
 
@@ -37,9 +46,9 @@
         <br><br>
 
         <!-- Add CAtegory Form Starts -->
-        <form action="" method="POST" enctype="multipart/form-data" style="display: table; background-color: lavenderblush; padding: 2%">
-
-            <table class="tbl-30">
+        <form action="" method="POST" enctype="multipart/form-data" style=" background-color: lavenderblush; padding: 2%">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
                 <tr>
                     <td>Title: </td>
                     <td>
@@ -76,8 +85,8 @@
                     </td>
                 </tr>
 
-            </table>
-
+                </table>
+            </div>
         </form>
         <!-- Add CAtegory Form Ends -->
 

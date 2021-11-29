@@ -1,4 +1,5 @@
 <?php include('partials/menu.php'); ?>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <style>
     a{
@@ -26,8 +27,8 @@
             }
             ?>
             <br><br>
-
-            <table class="table table-bordered table-hover table-striped" style="background-color: lavenderblush;">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover  table-striped" style="background-color: lavenderblush;">
                 <tr>
                     <th>S.N.</th>
                     <th>Song</th>
@@ -136,7 +137,8 @@
                 ?>
 
 
-            </table>
+                </table>
+            <div class="table-responsive">
         </div>
 
     </div>

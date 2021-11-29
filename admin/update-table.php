@@ -1,7 +1,9 @@
 <?php include('partials/menu.php'); 
 session_start();
+$table_number = mysqli_real_escape_string($conn, $_GET["table"]);
 // echo '<pre>';
 // print_r($_SESSION);
+// print_r($table_number);
 // echo '</pre>';
 ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -19,7 +21,7 @@ session_start();
 <div class="overlay" ></div>
     <div class="main-content1" style="position: relative;">
         <div class="wrapper">
-            <h1 class="text-white">Manage Order</h1>
+            <h1 class="text-white">Table <?php echo $table_number; ?></h1>
 
             <br /><br /><br />
 
@@ -36,7 +38,7 @@ session_start();
             ?>
             <br><br>
             <form action="?act=update" method="post" >
-            <div class="table-responsive">
+                <div class="table-responsive">
             <table class="table table-bordered table-hover table-striped" style="background-color: lavenderblush;">
                 <tr>
                     <th>S.N.</th>
@@ -52,7 +54,7 @@ session_start();
 
                 <?php
                 //Get all the orders from database
-                $sql = "SELECT * FROM order_head ORDER BY dttm DESC"; // DIsplay the Latest Order at First
+                $sql = "SELECT * FROM order_head Where table_number = $table_number ORDER BY dttm DESC"; // DIsplay the Latest Order at First
                 //Execute Query
                 $res = mysqli_query($conn, $sql);
                 //Count the Rows
@@ -117,8 +119,8 @@ session_start();
                 ?>
 
 
-                </table>
-            <div class="table-responsive">
+            </table>
+            </div>
             </form>
         </div>
 
